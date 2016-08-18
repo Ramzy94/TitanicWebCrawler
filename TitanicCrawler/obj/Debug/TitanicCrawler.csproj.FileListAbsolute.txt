@@ -1,0 +1,11 @@
+c:\users\mofokeng\documents\visual studio 2015\Projects\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.csprojResolveAssemblyReference.cache
+E:\TitanicSoftwareSolutions\TitanicCrawler\bin\Debug\TitanicCrawler.dll
+E:\TitanicSoftwareSolutions\TitanicCrawler\bin\Debug\TitanicCrawler.pdb
+E:\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.dll
+E:\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.pdb
+E:\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.csprojResolveAssemblyReference.cache
+H:\TitanicSoftwareSolutions\TitanicCrawler\bin\Debug\TitanicCrawler.dll
+H:\TitanicSoftwareSolutions\TitanicCrawler\bin\Debug\TitanicCrawler.pdb
+H:\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.csprojResolveAssemblyReference.cache
+H:\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.dll
+H:\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.pdb
