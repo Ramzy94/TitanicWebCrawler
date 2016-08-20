@@ -20,6 +20,7 @@ namespace TitanicCrawler
             browser.Refresh();
         }
 
+
         private void Browser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             document = browser.Document;
