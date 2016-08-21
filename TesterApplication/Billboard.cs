@@ -130,7 +130,7 @@ namespace TesterApplication
                 set{album = value;}
             }
             /// <summary>
-            /// The albums highest postion on the billboard 200 charts
+            /// The albums current postion on the billboard 200 charts
             /// </summary>
             public int PostionOnChart
             {
@@ -160,6 +160,12 @@ namespace TesterApplication
             {
                 get{return peakPostion;}
                 set{peakPostion = value;}
+            }
+
+            public string toJSON()
+            {
+                return "{\"Artist\":\""+Artist+"\", \"Album\":\""+AlbumTitle+"\", \"Current Position\":\""+PostionOnChart+"\", \"Previous Position\":\""+PositionPreviousWeek+"\", \"Peak Posotion\":\""+PeakPostion+"\", \"Weeks On Chart\":\""+WeeksOnChart+"\"}";
+
             }
         }
         #endregion
