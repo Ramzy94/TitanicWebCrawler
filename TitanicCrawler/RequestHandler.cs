@@ -3,6 +3,9 @@ using System.IO;
 
 namespace TitanicCrawler
 {
+    /// <summary>
+    /// Class To Handle webrequests for the crawler
+    /// </summary>
     class RequestHandler
     {
         private Stream stream;
@@ -15,12 +18,20 @@ namespace TitanicCrawler
 
         public RequestHandler(string address)
         {
-            HttpWebRequest request = HttpWebRequest.CreateHttp(address);
-            request.Proxy = WebProxy.GetDefaultProxy();
+            try
+            {
+                HttpWebRequest request = HttpWebRequest.CreateHttp(address);
+                request.Proxy = WebProxy.GetDefaultProxy();
 
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
-            stream = response.GetResponseStream();
+                stream = response.GetResponseStream();
+            }
+            catch (System.Exception ex)
+            {
+
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
         }
     }
 }

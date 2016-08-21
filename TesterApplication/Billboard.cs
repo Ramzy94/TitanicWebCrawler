@@ -17,12 +17,15 @@ namespace TesterApplication
             
         }
 
+        /// <summary>
+        /// A List of The Albums on the Billboard200
+        /// </summary>
         internal List<Album> Albums
         {
             get { return albums;}
-            set{albums = value;}
         }
-        /// <summary>
+
+               /// <summary>
         /// Extracts Billboard200 Albums from the HTMLDocument. Should only be called after base class browser.DocumentCompleted event has fired.
         /// </summary>
         public void processBillboard200()
@@ -81,6 +84,7 @@ namespace TesterApplication
                 }
             }   
         }
+
         #region Inner Album Class for storing Album Objects
         public class Album
         {
@@ -92,7 +96,7 @@ namespace TesterApplication
             private int weeks;
 
             /// <summary>
-            /// Creates a new Album class which takes all 8 arguments
+            /// Creates a new Album class which takes all 6 arguments
             /// </summary>
             /// <param name="Position">The current chart position of the albums</param>
             /// <param name="artist">The artist name of the album</param>
@@ -159,6 +163,14 @@ namespace TesterApplication
             }
         }
         #endregion
+
+        protected override void Browser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            pageLoaded = true;
+            document = base.browser.Document;
+            links = document.Links;
+            MessageBox.Show("Billboard Loaded");
+        }
 
     }
 }
