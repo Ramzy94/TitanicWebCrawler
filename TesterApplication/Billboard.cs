@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using TitanicCrawler;
+using TitanicCrawler.Albums;
 
 namespace TesterApplication
 {
     class Billboard:WebSite
     {
-        private List<Album> albums = new List<Album>();
+        private List<BillboardAlbum> albums = new List<BillboardAlbum>();
 
         /// <summary>
         /// Creats new Billboard Music Objects
@@ -20,7 +21,7 @@ namespace TesterApplication
         /// <summary>
         /// A List of The Albums on the Billboard200
         /// </summary>
-        internal List<Album> Albums
+        internal List<BillboardAlbum> Albums
         {
             get { return albums;}
         }
@@ -80,100 +81,17 @@ namespace TesterApplication
                     else
                         theArtist = artists[0].InnerHtml.Trim();
 
-                    Albums.Add(new Album(position, theArtist, albums[0].InnerHtml,peakPosition,previous,weeks));
+                    Albums.Add(new BillboardAlbum(position, theArtist, albums[0].InnerHtml,peakPosition,previous,weeks));
                 }
             }   
         }
 
-        #region Inner Album Class for storing Album Objects
-        public class Album
-        {
-            private string artist;
-            private string album;
-            private int postion;
-            private int peakPostion;
-            private int prevPosition;
-            private int weeks;
 
-            /// <summary>
-            /// Creates a new Album class which takes all 6 arguments
-            /// </summary>
-            /// <param name="Position">The current chart position of the albums</param>
-            /// <param name="artist">The artist name of the album</param>
-            /// <param name="albumTitle">The title of the album</param>
-            /// <param name="Peakposition">The albums highest postion on the billboard 200 charts</param>
-            /// <param name="Previous">The album's chart position for the previous week</param>
-            /// <param name="Weeks">The collective number of weeks the album has been on the charts</param>
-            public Album(int Position,string artist, string albumTitle,int Peakposition, int Previous,int Weeks)
-            {
-                PostionOnChart = Position;
-                Artist = artist;
-                AlbumTitle = albumTitle;
-                PeakPostion = Peakposition;
-                PositionPreviousWeek = Previous;
-                WeeksOnChart = Weeks;
-            }
-            /// <summary>
-            /// The artist name of the album
-            /// </summary>
-            public string Artist
-            {
-                get {return artist;}
-                set{artist = value;}
-            }
-            /// <summary>
-            /// The title of the album
-            /// </summary>
-            public string AlbumTitle
-            {
-                get {return album;}
-                set{album = value;}
-            }
-            /// <summary>
-            /// The albums current postion on the billboard 200 charts
-            /// </summary>
-            public int PostionOnChart
-            {
-                get{return postion;}
-                set{postion = value;}
-            }
-            /// <summary>
-            /// The collective number of weeks the album has been on the charts
-            /// </summary>
-            public int WeeksOnChart
-            {
-                get{return weeks;}
-                set{weeks = value;}
-            }
-            /// <summary>
-            /// The album's chart position for the previous week
-            /// </summary>
-            public int PositionPreviousWeek
-            {
-                get{return prevPosition;}
-                set{prevPosition = value;}
-            }
-            /// <summary>
-            /// The albums highest postion on the billboard 200 charts
-            /// </summary>
-            public int PeakPostion
-            {
-                get{return peakPostion;}
-                set{peakPostion = value;}
-            }
-
-            public string toJSON()
-            {
-                return "{\"Artist\":\""+Artist+"\", \"Album\":\""+AlbumTitle+"\", \"Current Position\":\""+PostionOnChart+"\", \"Previous Position\":\""+PositionPreviousWeek+"\", \"Peak Posotion\":\""+PeakPostion+"\", \"Weeks On Chart\":\""+WeeksOnChart+"\"}";
-
-            }
-        }
-        #endregion
 
         protected override void Browser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             pageLoaded = true;
-            document = base.browser.Document;
+            document = browser.Document;
             links = document.Links;
             MessageBox.Show("Billboard Loaded");
         }

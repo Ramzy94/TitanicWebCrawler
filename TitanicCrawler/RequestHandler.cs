@@ -20,9 +20,8 @@ namespace TitanicCrawler
         {
             try
             {
-                HttpWebRequest request = HttpWebRequest.CreateHttp(address);
+                HttpWebRequest request = WebRequest.CreateHttp(address);
                 request.Proxy = WebProxy.GetDefaultProxy();
-
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
                 stream = response.GetResponseStream();

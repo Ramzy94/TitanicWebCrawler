@@ -20,3 +20,14 @@ H:\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.csproj
 H:\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Form1.resources
 H:\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Properties.Resources.resources
 H:\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.csproj.GenerateResource.Cache
+Z:\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TesterApplication.exe.config
+Z:\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TesterApplication.exe
+Z:\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TesterApplication.pdb
+Z:\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TitanicCrawler.dll
+Z:\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TitanicCrawler.pdb
+Z:\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.csprojResolveAssemblyReference.cache
+Z:\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Form1.resources
+Z:\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Properties.Resources.resources
+Z:\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.csproj.GenerateResource.Cache
+Z:\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.exe
+Z:\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.pdb

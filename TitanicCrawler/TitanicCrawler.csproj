@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Albums\Album.cs" />
+    <Compile Include="Albums\BillboardAlbum.cs" />
+    <Compile Include="Albums\MetacriticAlbum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestHandler.cs" />
     <Compile Include="WebSite.cs" />

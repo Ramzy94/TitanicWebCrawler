@@ -9,3 +9,8 @@ H:\TitanicSoftwareSolutions\TitanicCrawler\bin\Debug\TitanicCrawler.pdb
 H:\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.csprojResolveAssemblyReference.cache
 H:\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.dll
 H:\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.pdb
+Z:\TitanicSoftwareSolutions\TitanicCrawler\bin\Debug\TitanicCrawler.dll
+Z:\TitanicSoftwareSolutions\TitanicCrawler\bin\Debug\TitanicCrawler.pdb
+Z:\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.csprojResolveAssemblyReference.cache
+Z:\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.dll
+Z:\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.pdb
