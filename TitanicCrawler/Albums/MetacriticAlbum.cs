@@ -2,8 +2,6 @@
 {
     public class MetacriticAlbum:Album
     {
-        private string artist;
-        private string album;
         private int metaScore;
         private double userScore;
 

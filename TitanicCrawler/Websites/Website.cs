@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace TitanicCrawler
+namespace TitanicCrawler.Websites
 {
     public abstract class WebSite
     {
@@ -9,10 +9,10 @@ namespace TitanicCrawler
         protected WebBrowser browser;
         protected HtmlElementCollection links;
         protected bool pageLoaded = false;
-        
+
         public bool PageLoaded
-        {   
-            get{return pageLoaded;}
+        {
+            get { return pageLoaded; }
         }
 
         /// <summary>
@@ -25,7 +25,7 @@ namespace TitanicCrawler
             browser.DocumentCompleted += Browser_DocumentCompleted;
             browser.ScriptErrorsSuppressed = true;
             navigateTo(Address);
-            
+
         }
         /// <summary>
         /// Navigates to a specified address
@@ -40,6 +40,5 @@ namespace TitanicCrawler
 
 
         protected abstract void Browser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e);
-        
     }
 }

@@ -31,3 +31,25 @@ Z:\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Proper
 Z:\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.csproj.GenerateResource.Cache
 Z:\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.exe
 Z:\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.pdb
+E:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TesterApplication.exe.config
+E:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.exe
+E:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.pdb
+E:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TesterApplication.exe
+E:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TesterApplication.pdb
+E:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TitanicCrawler.dll
+E:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TitanicCrawler.pdb
+E:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.csprojResolveAssemblyReference.cache
+E:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Form1.resources
+E:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Properties.Resources.resources
+E:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.csproj.GenerateResource.Cache
+G:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TesterApplication.exe.config
+G:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.exe
+G:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.pdb
+G:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TesterApplication.exe
+G:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TesterApplication.pdb
+G:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TitanicCrawler.dll
+G:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TitanicCrawler.pdb
+G:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.csprojResolveAssemblyReference.cache
+G:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Form1.resources
+G:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Properties.Resources.resources
+G:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.csproj.GenerateResource.Cache

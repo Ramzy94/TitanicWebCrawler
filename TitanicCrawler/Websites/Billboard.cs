@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using TitanicCrawler;
 using TitanicCrawler.Albums;
 
-namespace TesterApplication
+namespace TitanicCrawler.Websites
 {
-    class Billboard:WebSite
+    public class Billboard:WebSite
     {
         private List<BillboardAlbum> albums = new List<BillboardAlbum>();
 
@@ -21,7 +20,7 @@ namespace TesterApplication
         /// <summary>
         /// A List of The Albums on the Billboard200
         /// </summary>
-        internal List<BillboardAlbum> Albums
+        public List<BillboardAlbum> Albums
         {
             get { return albums;}
         }

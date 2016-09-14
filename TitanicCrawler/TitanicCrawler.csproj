@@ -46,8 +46,11 @@
     <Compile Include="Albums\MetacriticAlbum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestHandler.cs" />
-    <Compile Include="WebSite.cs" />
+    <Compile Include="Websites\Billboard.cs" />
+    <Compile Include="Websites\Metacritic.cs" />
+    <Compile Include="Websites\WebSite.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
