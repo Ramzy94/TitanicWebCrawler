@@ -23,3 +23,4 @@ G:\New folder (4)\TitanicSoftwareSolutions\TitanicCrawler\bin\Debug\TitanicCrawl
 G:\New folder (4)\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.csprojResolveAssemblyReference.cache
 G:\New folder (4)\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.dll
 G:\New folder (4)\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.pdb
+E:\New folder (4)\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.csprojResolveAssemblyReference.cache

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TitanicCrawler.Albums
+﻿namespace TitanicCrawler.Albums
 {
     public class BillboardAlbum:Album
     {
@@ -31,7 +25,6 @@ namespace TitanicCrawler.Albums
             PositionPreviousWeek = Previous;
             WeeksOnChart = Weeks;
         }
-
         /// <summary>
         /// The albums current postion on the billboard 200 charts
         /// </summary>
@@ -63,12 +56,6 @@ namespace TitanicCrawler.Albums
         {
             get { return peakPostion; }
             set { peakPostion = value; }
-        }
-
-        public string toJSON()
-        {
-            return "{\"Artist\":\"" + Artist + "\", \"Album\":\"" + AlbumTitle + "\", \"Current Position\":\"" + PostionOnChart + "\", \"Previous Position\":\"" + PositionPreviousWeek + "\", \"Peak Posotion\":\"" + PeakPostion + "\", \"Weeks On Chart\":\"" + WeeksOnChart + "\"}";
-
         }
     }
 }

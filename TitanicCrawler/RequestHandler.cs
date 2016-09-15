@@ -9,11 +9,16 @@ namespace TitanicCrawler
     class RequestHandler
     {
         private Stream stream;
+        private bool successfull;
 
         public Stream Stream
         {
             get {return stream;}
-            set {stream = value;}
+        }
+
+        public bool Successfull
+        {
+            get {return successfull;}
         }
 
         public RequestHandler(string address)
@@ -21,14 +26,15 @@ namespace TitanicCrawler
             try
             {
                 HttpWebRequest request = WebRequest.CreateHttp(address);
-                request.Proxy = WebProxy.GetDefaultProxy();
+                //request.ServicePoint.ConnectionLimit = 1;
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
                 stream = response.GetResponseStream();
+                successfull = true;
             }
             catch (System.Exception ex)
             {
-
+                successfull = false;
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
         }

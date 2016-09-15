@@ -8,65 +8,56 @@ namespace TitanicCrawler.Websites
     public class Metacritic:WebSite
     {
         private List<MetacriticAlbum> albums = new List<MetacriticAlbum>();
+
         public Metacritic():base("http://www.metacritic.com/browse/albums/score/metascore/all/filtered?sort=desc")
         {
             
         }
-
+        /// <summary>
+        /// A List of Albums on Metacritic
+        /// </summary>
         public List<MetacriticAlbum> Albums
         {
-            get
-            {
-                return albums;
-            }
-
-            set
-            {
-                albums = value;
-            }
+            get{return albums;}
         }
 
-        public void processRatings() {
-            string theArtist="", theAlbum="";
-            double userRating=0;
-            int metaRating=0;
-
-            MetacriticAlbum metaAlbum;
-
+        public void processRatings()
+        {
+            string artist = "";
+            string album = "";
+            int metaRating = 0;
+            double userRating = 0;
+            MetacriticAlbum objAlbum;
             HtmlElementCollection rawData = document.GetElementsByTagName("div");
-            foreach(HtmlElement albumField in rawData)
+            for(int i=0;i<rawData.Count;i++)
             {
-                if(albumField.GetAttribute("className").StartsWith("product_row release"))
+                if(rawData[i].GetAttribute("className").StartsWith("product_row release"))
                 {
-                    userRating = Convert.ToInt32(albumField.GetElementsByTagName("span")[1].InnerHtml);
+                    HtmlElementCollection AlbumData = rawData[i].GetElementsByTagName("div");
 
-                    theArtist = albumField.GetElementsByTagName("a")[1].InnerHtml;
-                    theAlbum = albumField.GetElementsByTagName("a")[0].InnerHtml;
+                    for (int k = 0; k < AlbumData.Count; k++)
+                        if (AlbumData[k].GetAttribute("className").StartsWith("metascore"))
+                            metaRating = Convert.ToInt32(AlbumData[k].InnerHtml);
 
-                    HtmlElementCollection collection = albumField.GetElementsByTagName("div");
+                    AlbumData = rawData[i].GetElementsByTagName("a");
+                    album = AlbumData[0].InnerHtml;
+                    artist = AlbumData[1].InnerHtml;
 
-                    foreach (HtmlElement element in collection)
-                    {
-                        if (element.GetAttribute("className").StartsWith("metascore"))
-                        {
-                            metaRating = int.Parse(element.InnerHtml);
-                        }
-                        userRating = int.Parse(element.GetElementsByTagName("span")[1].InnerHtml);
+                    AlbumData = rawData[i].GetElementsByTagName("span");
+                    userRating = Convert.ToDouble(AlbumData[1].InnerHtml);
 
-                        theArtist = element.GetElementsByTagName("a")[1].InnerHtml;
-                        theAlbum = element.GetElementsByTagName("a")[0].InnerHtml;
-                    }
-                    metaAlbum = new MetacriticAlbum(theArtist, theAlbum, metaRating, userRating);
-                    Albums.Add(metaAlbum);
+                    objAlbum = new MetacriticAlbum(artist, album, metaRating, userRating);
+                    this.albums.Add(objAlbum);
                 }
             }
         }
 
         protected override void Browser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-            base.document = base.browser.Document;
+            document = base.browser.Document;
             links = document.Links;
-            MessageBox.Show("Metacritic Loaded");
+            if(PageLoaded)
+                MessageBox.Show("MetaCritic Loaded");
         }
     }
 }

@@ -36,8 +36,8 @@ namespace TitanicCrawler.Websites
             pageLoaded = false;
             requestHandler = new RequestHandler(address);
             browser.DocumentStream = requestHandler.Stream;
+            pageLoaded = requestHandler.Successfull;
         }
-
 
         protected abstract void Browser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e);
     }

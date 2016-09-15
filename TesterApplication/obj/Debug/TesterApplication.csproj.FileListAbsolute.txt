@@ -53,3 +53,13 @@ G:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApp
 G:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Form1.resources
 G:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Properties.Resources.resources
 G:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.csproj.GenerateResource.Cache
+G:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Bson.dll
+G:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Driver.Core.dll
+G:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Driver.dll
+G:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Bson.xml
+G:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Driver.xml
+E:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Bson.dll
+E:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Driver.Core.dll
+E:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Driver.dll
+E:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Bson.xml
+E:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Driver.xml

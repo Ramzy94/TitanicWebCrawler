@@ -1,4 +1,6 @@
-﻿namespace TitanicCrawler.Albums
+﻿using System.Web.Script.Serialization;
+
+namespace TitanicCrawler.Albums
 {
     public class Album
     {
@@ -30,6 +32,14 @@
         {
             get { return album; }
             set { album = value; }
+        }
+        /// <summary>
+        /// Returns a JSON string of the object
+        /// </summary>
+        /// <returns></returns>
+        public string toJSON()
+        {
+            return new JavaScriptSerializer().Serialize(this);
         }
     }
 }

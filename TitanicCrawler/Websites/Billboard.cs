@@ -25,7 +25,7 @@ namespace TitanicCrawler.Websites
             get { return albums;}
         }
 
-               /// <summary>
+        /// <summary>
         /// Extracts Billboard200 Albums from the HTMLDocument. Should only be called after base class browser.DocumentCompleted event has fired.
         /// </summary>
         public void processBillboard200()
@@ -89,10 +89,10 @@ namespace TitanicCrawler.Websites
 
         protected override void Browser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-            pageLoaded = true;
             document = browser.Document;
             links = document.Links;
-            MessageBox.Show("Billboard Loaded");
+            if(PageLoaded)
+                MessageBox.Show("Billboard Loaded");
         }
 
     }
