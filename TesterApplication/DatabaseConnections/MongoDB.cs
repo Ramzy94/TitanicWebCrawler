@@ -1,8 +1,6 @@
 ﻿using MongoDB.Driver;
 using MongoDB.Bson;
 using TitanicCrawler.Albums;
-using MongoDB.Bson.Serialization;
-using System.Windows.Forms;
 using System;
 
 namespace TesterApplication.DatabaseConnections
@@ -21,7 +19,7 @@ namespace TesterApplication.DatabaseConnections
             //mongoDatabase.CreateCollection("albums");
 
             collection = mongoDatabase.GetCollection<BsonDocument>("albums");
-   
+
         }
 
         public void insert(Album album)
@@ -49,6 +47,17 @@ namespace TesterApplication.DatabaseConnections
                 throw new ArgumentException("Invalid argument passed to method");
 
             collection.InsertOne(document);
+        }
+
+        public MongoClientSettings setUpConnection(int option)
+        {
+            MongoClientSettings settings = new MongoClientSettings();
+
+            settings.ConnectionMode = ConnectionMode.Automatic;
+            settings.Server = new MongoServerAddress("ds147975.mlab.com", 47975);
+            settings.
+
+            return new MongoClientSettings();
         }
     }
 }

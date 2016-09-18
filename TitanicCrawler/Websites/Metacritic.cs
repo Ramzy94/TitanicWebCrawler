@@ -9,7 +9,7 @@ namespace TitanicCrawler.Websites
     {
         private List<MetacriticAlbum> albums = new List<MetacriticAlbum>();
 
-        public Metacritic():base("http://www.metacritic.com/browse/albums/score/metascore/all/filtered?sort=desc")
+        public Metacritic():base("http://www.metacritic.com/browse/albums/score/metascore/all/")
         {
             
         }
@@ -23,6 +23,8 @@ namespace TitanicCrawler.Websites
 
         public void processRatings()
         {
+            loadDocument();
+
             string artist = "";
             string album = "";
             int metaRating = 0;
@@ -48,16 +50,11 @@ namespace TitanicCrawler.Websites
 
                     objAlbum = new MetacriticAlbum(artist, album, metaRating, userRating);
                     this.albums.Add(objAlbum);
+
+                    if (links.Count > 0)
+                    { }
                 }
             }
-        }
-
-        protected override void Browser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-            document = base.browser.Document;
-            links = document.Links;
-            if(PageLoaded)
-                MessageBox.Show("MetaCritic Loaded");
         }
     }
 }

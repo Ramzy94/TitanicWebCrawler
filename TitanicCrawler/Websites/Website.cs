@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace TitanicCrawler.Websites
 {
@@ -6,8 +7,7 @@ namespace TitanicCrawler.Websites
     {
         private RequestHandler requestHandler;
         protected HtmlDocument document;
-        protected WebBrowser browser;
-        protected HtmlElementCollection links;
+        protected Stack<HtmlElement> links;
         protected bool pageLoaded = false;
 
         public bool PageLoaded
@@ -21,9 +21,6 @@ namespace TitanicCrawler.Websites
         /// <param name="Address">Initial Address to navigate to</param>
         public WebSite(string Address)
         {
-            browser = new WebBrowser();
-            browser.DocumentCompleted += Browser_DocumentCompleted;
-            browser.ScriptErrorsSuppressed = true;
             navigateTo(Address);
 
         }
@@ -35,10 +32,18 @@ namespace TitanicCrawler.Websites
         {
             pageLoaded = false;
             requestHandler = new RequestHandler(address);
-            browser.DocumentStream = requestHandler.Stream;
-            pageLoaded = requestHandler.Successfull;
         }
 
-        protected abstract void Browser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e);
+        protected void loadDocument()
+        {
+            document = requestHandler.Browser.Document;
+
+            links = new Stack<HtmlElement>();
+
+            for (int i = document.Links.Count-1; i > 0; i--)
+            {
+                links.Push(document.Links[i]);
+            }        
+        }
     }
 }

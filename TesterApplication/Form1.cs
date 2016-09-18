@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using TitanicCrawler.Websites;
-using TesterApplication.DatabaseConnections;
 
 namespace TesterApplication
 {
@@ -30,8 +29,6 @@ namespace TesterApplication
             {
                 object[] tmp = { billBoard.Albums[i].PostionOnChart, billBoard.Albums[i].Artist, billBoard.Albums[i].AlbumTitle,billBoard.Albums[i].PeakPostion,billBoard.Albums[i].PositionPreviousWeek,billBoard.Albums[i].WeeksOnChart };
                 dataGridView1.Rows.Add(tmp);
-                mongo.insert(billBoard.Albums[i]);
-                //Console.WriteLine(billBoard.Albums[i].toJSON());
             }
             for (int column = 0; column < dataGridView1.ColumnCount; column++)
                 dataGridView1.AutoResizeColumn(column);

@@ -63,3 +63,6 @@ E:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.D
 E:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Driver.dll
 E:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Bson.xml
 E:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Driver.xml
+F:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TesterApplication.exe.config
+F:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.exe
+F:\New folder (4)\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.pdb
