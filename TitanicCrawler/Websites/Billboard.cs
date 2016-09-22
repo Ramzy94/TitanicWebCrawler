@@ -30,6 +30,8 @@ namespace TitanicCrawler.Websites
         /// </summary>
         public void processBillboard200()
         {
+            //base.getDocument();
+
             string theArtist = "";
             int position = 0;
             int previous = 0;
@@ -85,13 +87,11 @@ namespace TitanicCrawler.Websites
             }   
         }
 
-
-
         protected override void Browser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             document = browser.Document;
             links = document.Links;
-            if(PageLoaded)
+            if (PageLoaded)
                 MessageBox.Show("Billboard Loaded");
         }
 

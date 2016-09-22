@@ -1,5 +1,7 @@
 ﻿using System.Net;
 using System.IO;
+using System.Windows.Forms;
+using System;
 
 namespace TitanicCrawler
 {
@@ -8,12 +10,12 @@ namespace TitanicCrawler
     /// </summary>
     class RequestHandler
     {
-        private Stream stream;
+        private Stream document;
         private bool successfull;
 
-        public Stream Stream
+        public Stream HTMLDocument
         {
-            get {return stream;}
+            get {return document;}
         }
 
         public bool Successfull
@@ -25,18 +27,20 @@ namespace TitanicCrawler
         {
             try
             {
-                HttpWebRequest request = WebRequest.CreateHttp(address);
-                //request.ServicePoint.ConnectionLimit = 1;
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                WebClient client = new WebClient();
 
-                stream = response.GetResponseStream();
+                // NO fuckung Idea what this does but it saved my bacon
+                client.Headers.Add(HttpRequestHeader.UserAgent, "User - Agent: Mozilla / 5.0(Windows NT 6.1; WOW64; rv: 8.0) Gecko / 20100101 Firefox / 8.0");
+                document = client.OpenRead(address);
+
                 successfull = true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 successfull = false;
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
             }
         }
+
     }
 }

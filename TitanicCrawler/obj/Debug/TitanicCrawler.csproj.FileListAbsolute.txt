@@ -24,3 +24,7 @@ G:\New folder (4)\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawl
 G:\New folder (4)\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.dll
 G:\New folder (4)\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.pdb
 E:\New folder (4)\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.csprojResolveAssemblyReference.cache
+C:\Users\Mofokeng\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TitanicCrawler\bin\Debug\TitanicCrawler.dll
+C:\Users\Mofokeng\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TitanicCrawler\bin\Debug\TitanicCrawler.pdb
+C:\Users\Mofokeng\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.dll
+C:\Users\Mofokeng\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.pdb

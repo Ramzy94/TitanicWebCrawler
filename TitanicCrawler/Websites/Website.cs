@@ -9,6 +9,7 @@ namespace TitanicCrawler.Websites
         protected WebBrowser browser;
         protected HtmlElementCollection links;
         protected bool pageLoaded = false;
+        private string webAddress;
 
         public bool PageLoaded
         {
@@ -21,22 +22,28 @@ namespace TitanicCrawler.Websites
         /// <param name="Address">Initial Address to navigate to</param>
         public WebSite(string Address)
         {
+            webAddress = Address;
             browser = new WebBrowser();
             browser.DocumentCompleted += Browser_DocumentCompleted;
             browser.ScriptErrorsSuppressed = true;
-            navigateTo(Address);
-
+            navigateTo();
         }
         /// <summary>
         /// Navigates to a specified address
         /// </summary>
-        /// <param name="address">Address to navigate to</param>
-        protected void navigateTo(string address)
+        protected void navigateTo()
         {
             pageLoaded = false;
-            requestHandler = new RequestHandler(address);
-            browser.DocumentStream = requestHandler.Stream;
+            requestHandler = new RequestHandler(webAddress);
+            browser.DocumentStream = requestHandler.HTMLDocument;
             pageLoaded = requestHandler.Successfull;
+        }
+
+        public void getDocument()
+        {
+            
+            document = browser.Document;
+            links = document.Links;
         }
 
         protected abstract void Browser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e);

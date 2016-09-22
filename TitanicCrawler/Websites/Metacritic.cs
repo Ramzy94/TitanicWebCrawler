@@ -9,7 +9,7 @@ namespace TitanicCrawler.Websites
     {
         private List<MetacriticAlbum> albums = new List<MetacriticAlbum>();
 
-        public Metacritic():base("http://www.metacritic.com/browse/albums/score/metascore/all/filtered?sort=desc")
+        public Metacritic():base("http://www.metacritic.com/browse/albums/score/metascore/all")
         {
             
         }
@@ -23,6 +23,8 @@ namespace TitanicCrawler.Websites
 
         public void processRatings()
         {
+            //base.getDocument();
+
             string artist = "";
             string album = "";
             int metaRating = 0;
