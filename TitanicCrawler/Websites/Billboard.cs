@@ -38,62 +38,63 @@ namespace TitanicCrawler.Websites
             int peakPosition = 0;
             int weeks = 0;
 
-            HtmlElementCollection rawData = base.document.GetElementsByTagName("article");
-            for (int i = 0; i < rawData.Count; i++)
-            {
-                HtmlElement element = rawData[i];
-                if (element.GetAttribute("className").StartsWith("chart-row"))
+            foreach(HtmlDocument document in documents) {
+            HtmlElementCollection rawData = document.GetElementsByTagName("article");
+                for (int i = 0; i < rawData.Count; i++)
                 {
-                    HtmlElementCollection albums = element.GetElementsByTagName("h2");
-                    HtmlElementCollection artists = element.GetElementsByTagName("a");
-                    HtmlElementCollection altArtists = element.GetElementsByTagName("h3");
-                    HtmlElementCollection chartPosition = element.GetElementsByTagName("span");
-                    HtmlElementCollection peak = element.GetElementsByTagName("div");
+                    HtmlElement element = rawData[i];
+                    if (element.GetAttribute("className").StartsWith("chart-row"))
+                    {
+                        HtmlElementCollection albums = element.GetElementsByTagName("h2");
+                        HtmlElementCollection artists = element.GetElementsByTagName("a");
+                        HtmlElementCollection altArtists = element.GetElementsByTagName("h3");
+                        HtmlElementCollection chartPosition = element.GetElementsByTagName("span");
+                        HtmlElementCollection peak = element.GetElementsByTagName("div");
 
-                    for (int k = 0; k < chartPosition.Count; k++)
-                    {
-                        if(chartPosition[k].GetAttribute("className") == "chart-row__current-week")
-                            position = Convert.ToInt32(chartPosition[k].InnerHtml);
-                        if(chartPosition[k].GetAttribute("className") == "chart-row__last-week")
+                        for (int k = 0; k < chartPosition.Count; k++)
                         {
-                            string[] a = chartPosition[k].InnerHtml.Split(':');
-                            if (!(a[1].Trim() == "--"))
-                                previous = Convert.ToInt32(a[1].Trim());
-                            else
-                                previous = 0;
-                        }   
-                    }
-                    for(int j = 0; j < peak.Count; j++)
-                    {
-                        if(peak[j].GetAttribute("className")== "chart-row__top-spot")
-                        {
-                            HtmlElementCollection realPeak = peak[j].GetElementsByTagName("span");
-                            peakPosition = Convert.ToInt32(realPeak[1].InnerHtml.Trim());
-                        }else
-                        if (peak[j].GetAttribute("className") == "chart-row__weeks-on-chart")
-                        {
-                            HtmlElementCollection realWeeks = peak[j].GetElementsByTagName("span");
-                            weeks = Convert.ToInt32(realWeeks[1].InnerHtml.Trim());
+                            if (chartPosition[k].GetAttribute("className") == "chart-row__current-week")
+                                position = Convert.ToInt32(chartPosition[k].InnerHtml);
+                            if (chartPosition[k].GetAttribute("className") == "chart-row__last-week")
+                            {
+                                string[] a = chartPosition[k].InnerHtml.Split(':');
+                                if (!(a[1].Trim() == "--"))
+                                    previous = Convert.ToInt32(a[1].Trim());
+                                else
+                                    previous = 0;
+                            }
                         }
+                        for (int j = 0; j < peak.Count; j++)
+                        {
+                            if (peak[j].GetAttribute("className") == "chart-row__top-spot")
+                            {
+                                HtmlElementCollection realPeak = peak[j].GetElementsByTagName("span");
+                                peakPosition = Convert.ToInt32(realPeak[1].InnerHtml.Trim());
+                            }
+                            else
+                            if (peak[j].GetAttribute("className") == "chart-row__weeks-on-chart")
+                            {
+                                HtmlElementCollection realWeeks = peak[j].GetElementsByTagName("span");
+                                weeks = Convert.ToInt32(realWeeks[1].InnerHtml.Trim());
+                            }
+                        }
+
+                        if (artists[0].InnerHtml.Trim().Contains("<i"))
+                            theArtist = altArtists[0].InnerHtml.Trim();
+                        else
+                            theArtist = artists[0].InnerHtml.Trim();
+
+                        Albums.Add(new BillboardAlbum(position, theArtist, albums[0].InnerHtml, peakPosition, previous, weeks));
                     }
-
-                    if(artists[0].InnerHtml.Trim().Contains("<i"))
-                        theArtist = altArtists[0].InnerHtml.Trim();
-                    else
-                        theArtist = artists[0].InnerHtml.Trim();
-
-                    Albums.Add(new BillboardAlbum(position, theArtist, albums[0].InnerHtml,peakPosition,previous,weeks));
                 }
             }   
         }
 
         protected override void Browser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-            document = browser.Document;
-            links = document.Links;
+            documents.Add(browser.Document);
             if (PageLoaded)
-                MessageBox.Show("Billboard Loaded");
+                MessageBox.Show(this.GetType().ToString() + " Loaded");
         }
-
     }
 }

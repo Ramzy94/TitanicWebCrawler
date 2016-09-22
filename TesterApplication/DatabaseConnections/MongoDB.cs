@@ -55,7 +55,7 @@ namespace TesterApplication.DatabaseConnections
 
             settings.ConnectionMode = ConnectionMode.Automatic;
             settings.Server = new MongoServerAddress("ds147975.mlab.com", 47975);
-            settings.
+            //settings.
 
             return new MongoClientSettings();
         }
