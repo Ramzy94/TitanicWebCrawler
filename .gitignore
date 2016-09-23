@@ -1,0 +1,15 @@
+/.vs
+/packages
+/TitanicSoftwareSolutions.sln
+/TitanicSoftwareSolutions.userprefs
+/TitanicCrawler/bin
+/TitanicCrawler/obj
+/TitanicCrawler/TitanicCrawler.csproj
+/TitanicCrawler/Properties
+/TesterApplication/bin
+/TesterApplication/obj
+/TesterApplication/Properties
+/TesterApplication/App.config
+/TesterApplication/Form1.resx
+/TesterApplication/TesterApplication.csproj
+/TesterApplication/packages.config
