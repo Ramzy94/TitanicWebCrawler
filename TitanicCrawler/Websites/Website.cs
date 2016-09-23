@@ -5,7 +5,7 @@ namespace TitanicCrawler.Websites
 {
     public abstract class WebSite
     {
-        private RequestHandler requestHandler;
+        protected RequestHandler requestHandler;
         protected List <HtmlDocument> documents;
         protected WebBrowser browser;
         protected Stack<HtmlElement> links;

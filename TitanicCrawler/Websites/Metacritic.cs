@@ -80,16 +80,14 @@ namespace TitanicCrawler.Websites
                     if (i + 1 == documents.Count)
                         documents.Add(browser.Document);
                 }
-                if (PageLoaded)
-                    MessageBox.Show(GetType().ToString() + " Loaded");
-
-                if (page < 5)
+                Console.WriteLine(documents.Count);
+                requestHandler.nullify();
+                if (page < 21)
                 {
                     WebAddress = "http://www.metacritic.com/browse/albums/score/metascore/all/filtered?sort=desc&page=" + page.ToString();
                     navigateTo();
                     page++;
                 }
-                
             }
         }
     }

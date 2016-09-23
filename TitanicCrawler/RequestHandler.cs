@@ -8,7 +8,7 @@ namespace TitanicCrawler
     /// <summary>
     /// Class To Handle webrequests for the crawler
     /// </summary>
-    class RequestHandler
+    public class RequestHandler
     {
         private Stream document;
         private bool successfull;
@@ -31,7 +31,7 @@ namespace TitanicCrawler
                 client = new WebClient();
                 client.OpenReadCompleted += Client_OpenReadCompleted;
                 // NO fuckung Idea what this does but it saved my bacon
-                client.Headers.Add(HttpRequestHeader.UserAgent, "User - Agent: Mozilla / 5.0(Windows NT 6.1; WOW64; rv: 8.0) Gecko / 20100101 Firefox / 8.0");
+                client.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla / 5.0(Windows NT 6.1; WOW64; rv: 8.0) Gecko / 20100101 Firefox / 8.0");
                 document = client.OpenRead(address);
 
                 successfull = true;
@@ -43,6 +43,19 @@ namespace TitanicCrawler
             catch (WebException ex)
             {
                 MessageBox.Show(ex.Message + "Entlek it's This One Bra");
+            }
+        }
+
+        public void nullify()
+        {
+            if (document != null)
+            {
+                document.Flush();
+                document.Close();
+                document = null;
+                client.Dispose();
+                client = null;
+                Console.WriteLine("Disposed");
             }
         }
 
