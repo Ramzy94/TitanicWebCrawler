@@ -37,6 +37,7 @@ namespace TitanicCrawler.Websites
             int previous = 0;
             int peakPosition = 0;
             int weeks = 0;
+            Albums.Clear();
 
             foreach(HtmlDocument document in documents) {
             HtmlElementCollection rawData = document.GetElementsByTagName("article");

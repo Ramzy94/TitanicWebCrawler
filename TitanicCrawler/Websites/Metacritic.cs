@@ -32,6 +32,7 @@ namespace TitanicCrawler.Websites
             int metaRating = 0;
             double userRating = 0;
             MetacriticAlbum objAlbum;
+            Albums.Clear();
 
             foreach(HtmlDocument document in documents) { 
 

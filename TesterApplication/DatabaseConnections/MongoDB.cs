@@ -12,14 +12,16 @@ namespace TesterApplication.DatabaseConnections
         private IMongoCollection<BsonDocument> collection;
         private BsonDocument document;
 
-        public MongoDB()
+        public MongoDB(int option)
         {
-            client = new MongoClient("mongodb://localhost:27017");
-            mongoDatabase = client.GetDatabase("TitanicBllboard");
-            //mongoDatabase.CreateCollection("albums");
+            switch (option)
+            {
+                case 0: { client = new MongoClient("mongodb://Titanic:password@ds147975.mlab.com:47975/audioalbums"); break; }
+                case 1: { client = new MongoClient("mongodb://localhost:27017"); break; }
+            }
 
-            collection = mongoDatabase.GetCollection<BsonDocument>("albums");
-
+            mongoDatabase = client.GetDatabase("audioalbums");
+            
         }
 
         public void insert(Album album)
@@ -46,18 +48,8 @@ namespace TesterApplication.DatabaseConnections
             else
                 throw new ArgumentException("Invalid argument passed to method");
 
+            collection = mongoDatabase.GetCollection<BsonDocument>("Billboard200");
             collection.InsertOne(document);
-        }
-
-        public MongoClientSettings setUpConnection(int option)
-        {
-            MongoClientSettings settings = new MongoClientSettings();
-
-            settings.ConnectionMode = ConnectionMode.Automatic;
-            settings.Server = new MongoServerAddress("ds147975.mlab.com", 47975);
-            //settings.
-
-            return new MongoClientSettings();
         }
     }
 }

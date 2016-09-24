@@ -9,7 +9,7 @@ namespace TesterApplication
     {
         private Billboard billBoard;
         private Metacritic metacritic;
-        private DatabaseConnections.MongoDB mongo = new DatabaseConnections.MongoDB();        
+        private DatabaseConnections.MongoDB mongo = new DatabaseConnections.MongoDB(0);       
         public Form1()
         {
             InitializeComponent();
@@ -34,6 +34,7 @@ namespace TesterApplication
             }
             for (int column = 0; column < dataGridView1.ColumnCount; column++)
                 dataGridView1.AutoResizeColumn(column);
+
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
