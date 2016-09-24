@@ -1,4 +1,6 @@
-﻿namespace TitanicCrawler.Albums
+﻿using System.ComponentModel;
+
+namespace TitanicCrawler.Albums
 {
     public class MetacriticAlbum:Album
     {
@@ -17,17 +19,21 @@
             MetaScore = metaScore;
             UserScore = userScore;
         }
+
         /// <summary>
         /// The Rating of The Album according to Metacritic
         /// </summary>
+        [DisplayName("Metascore")]
         public int MetaScore
         {
             get { return metaScore; }
             set { metaScore = value; }
         }
+
         /// <summary>
         /// The Rating of The Album according to users of Metacritic
         /// </summary>
+        [DisplayName("Userscore")]
         public double UserScore
         {
             get { return userScore; }

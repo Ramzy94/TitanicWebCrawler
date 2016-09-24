@@ -1,4 +1,6 @@
-﻿namespace TitanicCrawler.Albums
+﻿using System.ComponentModel;
+
+namespace TitanicCrawler.Albums
 {
     public class BillboardAlbum:Album
     {
@@ -21,37 +23,45 @@
             PostionOnChart = Position;
             Artist = artist;
             AlbumTitle = albumTitle;
-            PeakPostion = Peakposition;
+            peakPostion = Peakposition;
             PositionPreviousWeek = Previous;
             WeeksOnChart = Weeks;
         }
+
         /// <summary>
         /// The albums current postion on the billboard 200 charts
         /// </summary>
+        [DisplayName("Chart Position")]
         public int PostionOnChart
         {
             get { return postion; }
             set { postion = value; }
         }
+
         /// <summary>
         /// The collective number of weeks the album has been on the charts
         /// </summary>
+        [DisplayName("Weeks On Chart")]
         public int WeeksOnChart
         {
             get { return weeks; }
             set { weeks = value; }
         }
+
         /// <summary>
         /// The album's chart position for the previous week
         /// </summary>
+        [DisplayName("Previous Chart Position")]
         public int PositionPreviousWeek
         {
             get { return prevPosition; }
             set { prevPosition = value; }
         }
+
         /// <summary>
         /// The albums highest postion on the billboard 200 charts
         /// </summary>
+        [DisplayName("Peak Chart Position")]
         public int PeakPostion
         {
             get { return peakPostion; }

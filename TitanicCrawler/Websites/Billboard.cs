@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Forms;
 using TitanicCrawler.Albums;
 
 namespace TitanicCrawler.Websites
 {
+    
     public class Billboard:WebSite
     {
         private List<BillboardAlbum> albums = new List<BillboardAlbum>();

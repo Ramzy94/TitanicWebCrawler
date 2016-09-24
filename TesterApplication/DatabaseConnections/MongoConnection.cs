@@ -1,29 +1,37 @@
-﻿using MongoDB.Driver;
-using MongoDB.Bson;
-using TitanicCrawler.Albums;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using System;
+using TitanicCrawler.Albums;
 
 namespace TesterApplication.DatabaseConnections
 {
-    public class MongoDB
+    public class MongoConnection
     {
         private MongoClient client;
         private IMongoDatabase mongoDatabase;
         private IMongoCollection<BsonDocument> collection;
         private BsonDocument document;
 
-        public MongoDB(int option)
+
+        /// <summary>
+        /// Initialises a connection to a MongoDB Sever and gets the audioalbums Database 
+        /// </summary>
+        /// <param name="server">Selects the server to connect to. 1 connects to a localhost (127.0.0.1) server. Any other value connects to the mLab online server</param>
+        public MongoConnection(int server)
         {
-            switch (option)
+            switch (server)
             {
                 case 0: { client = new MongoClient("mongodb://Titanic:password@ds147975.mlab.com:47975/audioalbums"); break; }
                 case 1: { client = new MongoClient("mongodb://localhost:27017"); break; }
+                default: { client = new MongoClient("mongodb://Titanic:password@ds147975.mlab.com:47975/audioalbums"); break; }
             }
-
             mongoDatabase = client.GetDatabase("audioalbums");
-            
         }
 
+        /// <summary>
+        /// Inserts An Album Into the Selected MongoDB Database
+        /// </summary>
+        /// <param name="album">The Album object to be inserted</param>
         public void insert(Album album)
         {
             document = new BsonDocument();

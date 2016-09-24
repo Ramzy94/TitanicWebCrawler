@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TitanicCrawler.RequestHandler">
+    <Position X="0.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAoJAAAIAAAABAAAAAA=</HashCode>
+      <FileName>RequestHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TitanicCrawler.Albums.Album">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAACIAAAAAIAAAACAAAAAA=</HashCode>
+      <FileName>Albums\Album.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TitanicCrawler.Albums.BillboardAlbum">
+    <Position X="10.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAQAQQAAAAAAAAAAAAAAAAAAAAEAAAAAEAAAAAAEBA=</HashCode>
+      <FileName>Albums\BillboardAlbum.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TitanicCrawler.Albums.MetacriticAlbum">
+    <Position X="7.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABACAAAQAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Albums\MetacriticAlbum.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TitanicCrawler.Websites.Billboard">
+    <Position X="1.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAJAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAAA=</HashCode>
+      <FileName>Websites\Billboard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TitanicCrawler.Websites.Metacritic">
+    <Position X="5.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABQAAAAAAAAAAEAAAAAAAAAAAAAAIAAAACAAAAAA=</HashCode>
+      <FileName>Websites\Metacritic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TitanicCrawler.Websites.WebSite">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABAAAAAAAAAAAEIAAAACAgAIIAgAAAAIAAAAAAAA=</HashCode>
+      <FileName>Websites\WebSite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

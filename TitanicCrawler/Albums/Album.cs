@@ -1,4 +1,6 @@
-﻿using System.Web.Script.Serialization;
+﻿using System.ComponentModel;
+using System.Web.Script.Serialization;
+
 
 namespace TitanicCrawler.Albums
 {
@@ -17,17 +19,23 @@ namespace TitanicCrawler.Albums
             Artist = artist;
             AlbumTitle = albumTitle;
         }
+
+
+
         /// <summary>
         /// The artist name of the album
         /// </summary>
+        [DisplayName("Artist")]
         public string Artist
         {
             get { return artist; }
             set { artist = value; }
         }
+
         /// <summary>
         /// The title of the album
         /// </summary>
+        [DisplayName("Album Title")]
         public string AlbumTitle
         {
             get { return album; }

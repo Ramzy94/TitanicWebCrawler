@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using TitanicCrawler.Albums;
 
-
 namespace TitanicCrawler.Websites
 {
     public class Metacritic : WebSite
     {
         private List<MetacriticAlbum> albums = new List<MetacriticAlbum>();
         private int page = 1;
-        public Metacritic() : base("http://www.metacritic.com/browse/albums/score/metascore/all/filtered?sort=desc")
+        public Metacritic() : base("http://www.metacritic.com/browse/albums/score/metascore/all/all?sort=desc")
         {
 
         }
@@ -25,7 +24,6 @@ namespace TitanicCrawler.Websites
 
         public void processRatings()
         {
-            //base.getDocument();
 
             string artist = "";
             string album = "";
@@ -67,25 +65,24 @@ namespace TitanicCrawler.Websites
 
         protected override void Browser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-            // ((sender as WebBrowser).ReadyState == WebBrowserReadyState.Complete)
             {
                 if (documents.Count == 0)
                     documents.Add(browser.Document);
 
                 for (int i = 0; i < documents.Count; i++)
                 {
-
-                    if (documents[i] == browser.Document)
-                        documents[i] = browser.Document;
-                    else
-                    if (i + 1 == documents.Count)
-                        documents.Add(browser.Document);
+                    if (!ReferenceEquals(browser.Document.Body.InnerHtml,null))
+                        if (documents[i].Body == browser.Document.Body)
+                            documents[i] = browser.Document;
+                        else
+                        if (i + 1 == documents.Count)
+                            documents.Add(browser.Document);
                 }
                 Console.WriteLine(documents.Count);
                 requestHandler.nullify();
-                if (page < 21)
+                if (page < 4)
                 {
-                    WebAddress = "http://www.metacritic.com/browse/albums/score/metascore/all/filtered?sort=desc&page=" + page.ToString();
+                    WebAddress = "http://www.metacritic.com/browse/albums/score/metascore/all/all?sort=desc&page=" + page.ToString();
                     navigateTo();
                     page++;
                 }
