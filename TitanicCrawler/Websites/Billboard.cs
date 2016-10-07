@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Windows.Forms;
 using TitanicCrawler.Albums;
 
 namespace TitanicCrawler.Websites
 {
-    
+
     public class Billboard:WebSite
     {
         private List<BillboardAlbum> albums = new List<BillboardAlbum>();
@@ -27,6 +26,18 @@ namespace TitanicCrawler.Websites
             get { return albums;}
         }
 
+        private string getImagePath(HtmlElement divElement)
+        {
+            try
+            {
+                return divElement.Style.ToString().Substring(23, divElement.Style.ToString().Length - 26);
+            }
+            catch (NullReferenceException)
+            {
+                return divElement.GetAttribute("data-imagesrc");
+            }
+        }
+
         /// <summary>
         /// Extracts Billboard200 Albums from the HTMLDocument. Should only be called after base class browser.DocumentCompleted event has fired.
         /// </summary>
@@ -39,6 +50,7 @@ namespace TitanicCrawler.Websites
             int previous = 0;
             int peakPosition = 0;
             int weeks = 0;
+            string imgpath = "";
             Albums.Clear();
 
             foreach(HtmlDocument document in documents) {
@@ -80,6 +92,9 @@ namespace TitanicCrawler.Websites
                                 HtmlElementCollection realWeeks = peak[j].GetElementsByTagName("span");
                                 weeks = Convert.ToInt32(realWeeks[1].InnerHtml.Trim());
                             }
+                            else
+                            if (peak[j].GetAttribute("className") == "chart-row__image")
+                                imgpath = getImagePath(peak[j]);
                         }
 
                         if (artists[0].InnerHtml.Trim().Contains("<i"))
@@ -87,7 +102,7 @@ namespace TitanicCrawler.Websites
                         else
                             theArtist = artists[0].InnerHtml.Trim();
 
-                        Albums.Add(new BillboardAlbum(position, theArtist, albums[0].InnerHtml, peakPosition, previous, weeks));
+                        Albums.Add(new BillboardAlbum(position, theArtist, albums[0].InnerHtml, peakPosition, previous, weeks, imgpath));
                     }
                 }
             }   
@@ -97,7 +112,7 @@ namespace TitanicCrawler.Websites
         {
             documents.Add(browser.Document);
             if (PageLoaded)
-                MessageBox.Show(this.GetType().ToString() + " Loaded");
+                MessageBox.Show(GetType().ToString() + " Loaded");
         }
     }
 }

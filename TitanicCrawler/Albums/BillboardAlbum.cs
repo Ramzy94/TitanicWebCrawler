@@ -8,6 +8,7 @@ namespace TitanicCrawler.Albums
         private int peakPostion;
         private int prevPosition;
         private int weeks;
+        private string imgHref;
 
         /// <summary>
         /// Creates a new Album class which takes all 6 arguments
@@ -18,7 +19,8 @@ namespace TitanicCrawler.Albums
         /// <param name="Peakposition">The albums highest postion on the billboard 200 charts</param>
         /// <param name="Previous">The album's chart position for the previous week</param>
         /// <param name="Weeks">The collective number of weeks the album has been on the charts</param>
-        public BillboardAlbum(int Position, string artist, string albumTitle, int Peakposition, int Previous, int Weeks):base(artist, albumTitle)
+        /// <param name="Image">The path to the album cover art image</param>
+        public BillboardAlbum(int Position, string artist, string albumTitle, int Peakposition, int Previous, int Weeks, string Image):base(artist, albumTitle)
         {
             PostionOnChart = Position;
             Artist = artist;
@@ -26,6 +28,7 @@ namespace TitanicCrawler.Albums
             peakPostion = Peakposition;
             PositionPreviousWeek = Previous;
             WeeksOnChart = Weeks;
+            ImagePath = Image;
         }
 
         /// <summary>
@@ -66,6 +69,13 @@ namespace TitanicCrawler.Albums
         {
             get { return peakPostion; }
             set { peakPostion = value; }
+        }
+
+        [DisplayName("Image Link")]
+        public string ImagePath
+        {
+            get { return imgHref; }
+            set { imgHref = value; }
         }
     }
 }

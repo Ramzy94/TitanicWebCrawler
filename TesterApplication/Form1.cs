@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using TitanicCrawler.Websites;
 using TesterApplication.DatabaseConnections;
+using TitanicCrawler.Albums;
 
 namespace TesterApplication
 {
@@ -19,10 +20,16 @@ namespace TesterApplication
         {
             billBoard.processBillboard200();
 
+
             dataGridView1.DataSource = billBoard.Albums;
 
             for (int column = 0; column < dataGridView1.ColumnCount; column++)
                 dataGridView1.AutoResizeColumn(column);
+
+            comboBox1.Items.Clear();
+
+            foreach (BillboardAlbum album in billBoard.Albums)
+                comboBox1.Items.Add(album.AlbumTitle);
 
         }
 
@@ -44,6 +51,18 @@ namespace TesterApplication
 
             for (int column = 0; column < dataGridView1.ColumnCount; column++)
                 dataGridView1.AutoResizeColumn(column);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                pictureBox1.ImageLocation = billBoard.Albums[comboBox1.SelectedIndex].ImagePath;
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Nah Bra, No images here");
+            }
         }
     }
 }
