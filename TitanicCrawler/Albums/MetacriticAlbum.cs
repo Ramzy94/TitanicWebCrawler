@@ -42,15 +42,23 @@ namespace TitanicCrawler.Albums
             set { userScore = value; }
         }
 
-        public override BsonDocument getBSON()
+
+        /// <summary>
+        /// Returns a BSON Representation of the Album Object
+        /// </summary>
+        /// <returns>BSON representation of Album</returns>
+        public override BsonDocument BsonDocument
         {
-            return new BsonDocument()
+            get
+            {
+                return new BsonDocument()
             {
                 { "Artist",Artist },
                 { "Album",AlbumTitle },
                 { "Metascore",MetaScore },
                 { "Userscore",UserScore }
             };
+            }
         }
     }
 }

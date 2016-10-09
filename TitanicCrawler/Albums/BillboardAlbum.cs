@@ -25,12 +25,22 @@ namespace TitanicCrawler.Albums
         public BillboardAlbum(int Position, string artist, string albumTitle, int Peakposition, int Previous, int Weeks, string Image):base(artist, albumTitle)
         {
             PostionOnChart = Position;
-            Artist = artist;
-            AlbumTitle = albumTitle;
             peakPostion = Peakposition;
             PositionPreviousWeek = Previous;
             WeeksOnChart = Weeks;
             ImagePath = Image;
+        }
+
+        /// <summary>
+        /// Creates a new Album object from a BSON Document
+        /// </summary>
+        /// <param name="albumDoc"></param>
+        public BillboardAlbum(BsonDocument albumDoc):base(albumDoc)
+        {
+            PostionOnChart = Convert.ToInt32(albumDoc["ChartPosition"].ToString());
+            PeakPostion = Convert.ToInt32(albumDoc["PeakChartPosition"].ToString());
+            PositionPreviousWeek = Convert.ToInt32(albumDoc["PreviousChartPosition"].ToString());
+            WeeksOnChart = Convert.ToInt32(albumDoc["WeeksOnChart"].ToString());
         }
 
         /// <summary>
@@ -83,16 +93,25 @@ namespace TitanicCrawler.Albums
             set { imgHref = value; }
         }
 
-        public override BsonDocument getBSON()
+
+        /// <summary>
+        /// Returns a BSON Representation of the Album Object
+        /// </summary>
+        /// <returns>BSON representation of Album</returns>
+        public override BsonDocument BsonDocument
         {
-            return new BsonDocument()
+            get
+            {
+                return new BsonDocument()
             {
                 { "Artist",Artist },
                 { "Album",AlbumTitle },
-                { "Chart Position",PostionOnChart },
-                { "Previous Chart Position",PositionPreviousWeek },
-                { "Peak Chart Position",PeakPostion }
+                { "ChartPosition",PostionOnChart },
+                { "PreviousChartPosition",PositionPreviousWeek },
+                { "PeakChartPosition",PeakPostion },
+                {"WeeksOnChart",WeeksOnChart }
             };
+            }
         }
     }
 }

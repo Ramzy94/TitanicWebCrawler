@@ -21,6 +21,11 @@ namespace TitanicCrawler.Albums
             AlbumTitle = albumTitle;
         }
 
+        public Album(BsonDocument albumDocuement)
+        {
+            Artist = albumDocuement["Artist"].ToString();
+            AlbumTitle = albumDocuement["Album"].ToString();
+        }
 
 
         /// <summary>
@@ -55,6 +60,9 @@ namespace TitanicCrawler.Albums
         /// Returns a BSON Representation of the Album Object
         /// </summary>
         /// <returns>BSON representation of Album</returns>
-        public abstract BsonDocument getBSON();
+        public abstract BsonDocument BsonDocument
+        {
+            get;
+        }
     }
 }

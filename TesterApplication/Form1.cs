@@ -54,6 +54,9 @@ namespace TesterApplication
 
             for (int column = 0; column < dataGridView1.ColumnCount; column++)
                 dataGridView1.AutoResizeColumn(column);
+
+            foreach (MetacriticAlbum album in metacritic.Albums)
+                mongo.insert(album);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

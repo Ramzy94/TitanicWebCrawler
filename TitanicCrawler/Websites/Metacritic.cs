@@ -80,7 +80,7 @@ namespace TitanicCrawler.Websites
                 }
                 Console.WriteLine(documents.Count);
                 requestHandler.nullify();
-                if (page < 4)
+                if (page < 145)
                 {
                     WebAddress = "http://www.metacritic.com/browse/albums/score/metascore/all/all?sort=desc&page=" + page.ToString();
                     navigateTo();

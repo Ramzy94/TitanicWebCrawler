@@ -21,7 +21,6 @@ namespace TesterApplication.DatabaseConnections
         {
             switch (server)
             {
-                case 0: { client = new MongoClient("mongodb://Titanic:password@ds147975.mlab.com:47975/audioalbums"); break; }
                 case 1: { client = new MongoClient("mongodb://localhost:27017"); break; }
                 default: { client = new MongoClient("mongodb://Titanic:password@ds147975.mlab.com:47975/audioalbums"); break; }
             }
@@ -43,13 +42,14 @@ namespace TesterApplication.DatabaseConnections
             {
                 MetacriticAlbum metaAlbum = (MetacriticAlbum)album;
                 collection = mongoDatabase.GetCollection<BsonDocument>("Metacritic");
-                document = metaAlbum.getBSON();
+                document = metaAlbum.BsonDocument;
             }
             else if (album is BillboardAlbum)
             {
                 BillboardAlbum album200 = (BillboardAlbum)album;
                 collection = mongoDatabase.GetCollection<BsonDocument>("Billboard200");
-                document = album200.getBSON();
+                document = album200.BsonDocument;
+
             }
             else
                 throw new ArgumentException("Invalid argument passed to method");
@@ -57,5 +57,6 @@ namespace TesterApplication.DatabaseConnections
             
             collection.InsertOne(document);
         }
+
     }
 }

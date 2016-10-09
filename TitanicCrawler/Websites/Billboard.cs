@@ -43,8 +43,6 @@ namespace TitanicCrawler.Websites
         /// </summary>
         public void processBillboard200()
         {
-            //base.getDocument();
-
             string theArtist = "";
             int position = 0;
             int previous = 0;
