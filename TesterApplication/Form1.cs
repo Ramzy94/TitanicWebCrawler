@@ -10,7 +10,7 @@ namespace TesterApplication
     {
         private Billboard billBoard;
         private Metacritic metacritic;
-        private MongoConnection mongo = new MongoConnection(0);       
+        private MongoConnection mongo = new MongoConnection(1);       
         public Form1()
         {
             InitializeComponent();
@@ -29,7 +29,10 @@ namespace TesterApplication
             comboBox1.Items.Clear();
 
             foreach (BillboardAlbum album in billBoard.Albums)
-                comboBox1.Items.Add(album.AlbumTitle);
+            {
+                comboBox1.Items.Add(album.PostionOnChart + ": " + album.AlbumTitle);
+                mongo.insert(album);
+            }
 
         }
 

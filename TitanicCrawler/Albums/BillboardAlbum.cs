@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using MongoDB.Bson;
 
 namespace TitanicCrawler.Albums
 {
@@ -71,11 +73,26 @@ namespace TitanicCrawler.Albums
             set { peakPostion = value; }
         }
 
+        /// <summary>
+        /// The link to the Album's Cover Art
+        /// </summary>
         [DisplayName("Image Link")]
         public string ImagePath
         {
             get { return imgHref; }
             set { imgHref = value; }
+        }
+
+        public override BsonDocument getBSON()
+        {
+            return new BsonDocument()
+            {
+                { "Artist",Artist },
+                { "Album",AlbumTitle },
+                { "Chart Position",PostionOnChart },
+                { "Previous Chart Position",PositionPreviousWeek },
+                { "Peak Chart Position",PeakPostion }
+            };
         }
     }
 }

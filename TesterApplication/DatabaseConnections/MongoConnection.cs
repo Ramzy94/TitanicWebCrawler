@@ -42,21 +42,19 @@ namespace TesterApplication.DatabaseConnections
             if (album is MetacriticAlbum)
             {
                 MetacriticAlbum metaAlbum = (MetacriticAlbum)album;
-                document.Add("MetaScore", BsonValue.Create(metaAlbum.MetaScore));
-                document.Add("UserScore", BsonValue.Create(metaAlbum.UserScore));
+                collection = mongoDatabase.GetCollection<BsonDocument>("Metacritic");
+                document = metaAlbum.getBSON();
             }
             else if (album is BillboardAlbum)
             {
                 BillboardAlbum album200 = (BillboardAlbum)album;
-                document.Add("PostionOnChart", BsonValue.Create(album200.PostionOnChart));
-                document.Add("PreviousPosition", BsonValue.Create(album200.PositionPreviousWeek));
-                document.Add("PeakPostion", BsonValue.Create(album200.PeakPostion));
-                document.Add("WeeksOnChart", BsonValue.Create(album200.WeeksOnChart));
+                collection = mongoDatabase.GetCollection<BsonDocument>("Billboard200");
+                document = album200.getBSON();
             }
             else
                 throw new ArgumentException("Invalid argument passed to method");
 
-            collection = mongoDatabase.GetCollection<BsonDocument>("Billboard200");
+            
             collection.InsertOne(document);
         }
     }

@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel;
 using System.Web.Script.Serialization;
+using MongoDB.Bson;
 
 
 namespace TitanicCrawler.Albums
 {
-    public class Album
+    public abstract class Album
     {
         private string artist;
         private string album;
@@ -49,5 +50,11 @@ namespace TitanicCrawler.Albums
         {
             return new JavaScriptSerializer().Serialize(this);
         }
+
+        /// <summary>
+        /// Returns a BSON Representation of the Album Object
+        /// </summary>
+        /// <returns>BSON representation of Album</returns>
+        public abstract BsonDocument getBSON();
     }
 }

@@ -28,3 +28,5 @@ C:\Users\Mofokeng\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions
 C:\Users\Mofokeng\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TitanicCrawler\bin\Debug\TitanicCrawler.pdb
 C:\Users\Mofokeng\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.dll
 C:\Users\Mofokeng\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.pdb
+C:\Users\Mofokeng\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TitanicCrawler\bin\Debug\MongoDB.Bson.dll
+C:\Users\Mofokeng\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TitanicCrawler\bin\Debug\MongoDB.Bson.xml

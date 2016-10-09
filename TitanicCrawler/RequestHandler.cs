@@ -42,7 +42,7 @@ namespace TitanicCrawler
             }
             catch (WebException ex)
             {
-                MessageBox.Show(ex.Message + "Entlek it's This One Bra");
+                MessageBox.Show(ex.Message + "\nEntlek it's This One Bra");
             }
         }
 

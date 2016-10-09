@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using MongoDB.Bson;
 
 namespace TitanicCrawler.Albums
 {
@@ -40,5 +42,15 @@ namespace TitanicCrawler.Albums
             set { userScore = value; }
         }
 
+        public override BsonDocument getBSON()
+        {
+            return new BsonDocument()
+            {
+                { "Artist",Artist },
+                { "Album",AlbumTitle },
+                { "Metascore",MetaScore },
+                { "Userscore",UserScore }
+            };
+        }
     }
 }
