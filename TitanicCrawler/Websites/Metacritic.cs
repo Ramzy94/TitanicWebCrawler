@@ -82,7 +82,7 @@ namespace TitanicCrawler.Websites
                 requestHandler.nullify();
                 if (page < 145)
                 {
-                    WebAddress = "http://www.metacritic.com/browse/albums/score/metascore/all/all?sort=desc&page=" + page.ToString();
+                    WebAddress = "http://www.metacritic.com/browse/albums/score/metascore/all/all?sort=desc&page=" + documents.Count;
                     navigateTo();
                     page++;
                 }
