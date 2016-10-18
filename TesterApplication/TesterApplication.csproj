@@ -59,16 +59,43 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseConnections\MongoConnection.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\Crawler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Crawler.Designer.cs">
+      <DependentUpon>Crawler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Databases.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Databases.Designer.cs">
+      <DependentUpon>Databases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewData.Designer.cs">
+      <DependentUpon>ViewData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TitanicDash.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="TitanicDash.Designer.cs">
+      <DependentUpon>TitanicDash.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Crawler.resx">
+      <DependentUpon>Crawler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Databases.resx">
+      <DependentUpon>Databases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewData.resx">
+      <DependentUpon>ViewData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TitanicDash.resx">
+      <DependentUpon>TitanicDash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

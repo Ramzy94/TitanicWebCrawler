@@ -32,9 +32,10 @@ namespace TitanicCrawler.Websites
             MetacriticAlbum objAlbum;
             Albums.Clear();
 
-            foreach(HtmlDocument document in documents) { 
+            foreach (HtmlDocument document in documents)
+            {
 
-            HtmlElementCollection rawData = document.GetElementsByTagName("div");
+                HtmlElementCollection rawData = document.GetElementsByTagName("div");
                 for (int i = 0; i < rawData.Count; i++)
                 {
                     if (rawData[i].GetAttribute("className").StartsWith("product_row release"))
@@ -61,7 +62,7 @@ namespace TitanicCrawler.Websites
                 }
             }
         }
-        
+
 
         protected override void Browser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
@@ -71,16 +72,25 @@ namespace TitanicCrawler.Websites
 
                 for (int i = 0; i < documents.Count; i++)
                 {
-                    if (!ReferenceEquals(browser.Document.Body.InnerHtml,null))
-                        if (documents[i].Body == browser.Document.Body)
-                            documents[i] = browser.Document;
-                        else
-                        if (i + 1 == documents.Count)
-                            documents.Add(browser.Document);
+                    try
+                    {
+                        if (!ReferenceEquals(browser.Document.Body.InnerHtml, null))
+                            if (documents[i].Body == browser.Document.Body)
+                                documents[i] = browser.Document;
+                            else
+                            if (i + 1 == documents.Count)
+                                documents.Add(browser.Document);
+                    }
+                    catch (NullReferenceException ex)
+                    {
+                        MessageBox.Show("The value is indeed null");
+                    }
                 }
                 Console.WriteLine(documents.Count);
                 requestHandler.nullify();
-                if (page < 145)
+                browser.Dispose();
+                browser = null;
+                if (documents.Count < 145)
                 {
                     WebAddress = "http://www.metacritic.com/browse/albums/score/metascore/all/all?sort=desc&page=" + documents.Count;
                     navigateTo();
