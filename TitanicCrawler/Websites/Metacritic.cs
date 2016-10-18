@@ -81,7 +81,7 @@ namespace TitanicCrawler.Websites
                             if (i + 1 == documents.Count)
                                 documents.Add(browser.Document);
                     }
-                    catch (NullReferenceException ex)
+                    catch (NullReferenceException)
                     {
                         MessageBox.Show("The value is indeed null");
                     }
@@ -94,7 +94,7 @@ namespace TitanicCrawler.Websites
                 {
                     WebAddress = "http://www.metacritic.com/browse/albums/score/metascore/all/all?sort=desc&page=" + documents.Count;
                     navigateTo();
-                    page++;
+                    //page++;
                 }
             }
         }

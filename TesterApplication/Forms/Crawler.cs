@@ -1,20 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TitanicCrawler.Websites;
+using TitanicCrawler.Albums;
+using TesterApplication.DatabaseConnections;
 using System.Windows.Forms;
 
 namespace TesterApplication.Forms
 {
     public partial class Crawler : UserControl
     {
-        public Billboard billBoard;
-        public Metacritic metacritic;
+        private Billboard billBoard;
+        private Metacritic metacritic;
+        private MongoConnection mongo = new MongoConnection(1);
+
+        public Billboard BillBoard
+        {
+            get { return billBoard; }
+            set { billBoard = value; }
+        }
+
+        public Metacritic Metacritic
+        {
+            get { return metacritic; }
+            set { metacritic = value; }
+        }
+
         public Crawler()
         {
             InitializeComponent();
@@ -31,7 +40,7 @@ namespace TesterApplication.Forms
             {
                 case 1: billBoard = new Billboard(); break;
                 case 0: metacritic = new Metacritic(); break;
-                default: MessageBox.Show("make A Selection"); break;
+                default: MessageBox.Show("Make A Selection"); break;
             }
         }
 
@@ -53,6 +62,33 @@ namespace TesterApplication.Forms
 
             for (int col = 0; col < dataGridView1.Columns.Count; col++)
                 dataGridView1.AutoResizeColumn(col);
+        }
+
+        private void btnMongo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (BillboardAlbum bAlbum in billBoard.Albums)
+                    mongo.insert(bAlbum);
+
+                foreach (MetacriticAlbum mAlbum in metacritic.Albums)
+                    mongo.insert(mAlbum);
+
+            }
+            catch(NullReferenceException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void btnOracle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

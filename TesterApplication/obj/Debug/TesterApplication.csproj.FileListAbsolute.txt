@@ -82,3 +82,22 @@ C:\Users\Mofokeng\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions
 C:\Users\Mofokeng\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Forms.Crawler.resources
 C:\Users\Mofokeng\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Forms.Databases.resources
 C:\Users\Mofokeng\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Forms.ViewData.resources
+F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TesterApplication.exe.config
+F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.exe
+F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.pdb
+F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TesterApplication.exe
+F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TesterApplication.pdb
+F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Bson.dll
+F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Driver.Core.dll
+F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Driver.dll
+F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TitanicCrawler.dll
+F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TitanicCrawler.pdb
+F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Bson.xml
+F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Driver.xml
+F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.csprojResolveAssemblyReference.cache
+F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Forms.Crawler.resources
+F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Forms.Databases.resources
+F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Forms.ViewData.resources
+F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.TitanicDash.resources
+F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Properties.Resources.resources
+F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.csproj.GenerateResource.Cache
