@@ -71,6 +71,9 @@
     <Compile Include="Forms\Databases.Designer.cs">
       <DependentUpon>Databases.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FancyButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\ViewData.cs">
       <SubType>UserControl</SubType>
     </Compile>
