@@ -1,6 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
+using System.Collections.Generic;
 using TitanicCrawler.Albums;
 
 namespace TesterApplication.DatabaseConnections
@@ -53,9 +54,27 @@ namespace TesterApplication.DatabaseConnections
             }
             else
                 throw new ArgumentException("Invalid argument passed to method");
-
             
             collection.InsertOne(document);
+        }
+
+        public Stack<Album> getAllAlbums(int selection)
+        {
+            Stack<Album> album = new Stack<Album>();
+
+
+            switch(selection)
+            {
+                case 1: collection = mongoDatabase.GetCollection<BsonDocument>("Metacritic");break;
+                case 0: collection = mongoDatabase.GetCollection<BsonDocument>("Billboard200");break;
+            }
+            
+            return album;
+        }
+
+        public void close()
+        {
+            client = null;
         }
 
     }

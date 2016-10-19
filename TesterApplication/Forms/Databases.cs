@@ -16,5 +16,15 @@ namespace TesterApplication.Forms
         {
             InitializeComponent();
         }
+
+        private void btnOracleBilloard_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOracle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

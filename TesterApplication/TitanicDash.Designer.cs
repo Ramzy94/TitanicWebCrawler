@@ -34,7 +34,6 @@
             this.btnPrev = new TesterApplication.Forms.FancyButton();
             this.btnNext = new TesterApplication.Forms.FancyButton();
             this.crawler1 = new TesterApplication.Forms.Crawler();
-            this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +69,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 86F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(959, 86);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
@@ -78,6 +77,7 @@
             // 
             this.btnPrev.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPrev.BackColor = System.Drawing.Color.White;
+            this.btnPrev.Enabled = false;
             this.btnPrev.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -109,7 +109,9 @@
             // crawler1
             // 
             this.crawler1.BackColor = System.Drawing.SystemColors.Control;
+            this.crawler1.BillBoard = null;
             this.crawler1.Location = new System.Drawing.Point(3, 3);
+            this.crawler1.Metacritic = null;
             this.crawler1.Name = "crawler1";
             this.crawler1.Size = new System.Drawing.Size(954, 410);
             this.crawler1.TabIndex = 0;
@@ -123,10 +125,11 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "TitanicDash";
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.TitanicDash_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 

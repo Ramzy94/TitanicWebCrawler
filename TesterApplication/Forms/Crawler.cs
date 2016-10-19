@@ -29,10 +29,6 @@ namespace TesterApplication.Forms
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
 
         private void fancyButton1_Click(object sender, EventArgs e)
         {
@@ -83,12 +79,6 @@ namespace TesterApplication.Forms
             {
                 MessageBox.Show(ex.Message);
             }
-
-        }
-
-        private void btnOracle_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

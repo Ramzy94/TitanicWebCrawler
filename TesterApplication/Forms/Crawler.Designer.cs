@@ -30,11 +30,10 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.fancyButton1 = new TesterApplication.Forms.FancyButton();
-            this.btnBillboard = new TesterApplication.Forms.FancyButton();
-            this.btnMetacritic = new TesterApplication.Forms.FancyButton();
             this.btnMongo = new TesterApplication.Forms.FancyButton();
-            this.btnOracle = new TesterApplication.Forms.FancyButton();
+            this.btnMetacritic = new TesterApplication.Forms.FancyButton();
+            this.btnBillboard = new TesterApplication.Forms.FancyButton();
+            this.fancyButton1 = new TesterApplication.Forms.FancyButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +46,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(927, 306);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // comboBox1
             // 
@@ -61,33 +59,19 @@
             this.comboBox1.TabIndex = 1;
             this.comboBox1.Text = "Select a Website";
             // 
-            // fancyButton1
+            // btnMongo
             // 
-            this.fancyButton1.BackColor = System.Drawing.Color.White;
-            this.fancyButton1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.fancyButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fancyButton1.ForeColor = System.Drawing.Color.Black;
-            this.fancyButton1.Location = new System.Drawing.Point(15, 42);
-            this.fancyButton1.Name = "fancyButton1";
-            this.fancyButton1.Size = new System.Drawing.Size(151, 33);
-            this.fancyButton1.TabIndex = 2;
-            this.fancyButton1.Text = "Crawl Site";
-            this.fancyButton1.UseVisualStyleBackColor = false;
-            this.fancyButton1.Click += new System.EventHandler(this.fancyButton1_Click);
-            // 
-            // btnBillboard
-            // 
-            this.btnBillboard.BackColor = System.Drawing.Color.White;
-            this.btnBillboard.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnBillboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBillboard.ForeColor = System.Drawing.Color.Black;
-            this.btnBillboard.Location = new System.Drawing.Point(240, 42);
-            this.btnBillboard.Name = "btnBillboard";
-            this.btnBillboard.Size = new System.Drawing.Size(151, 33);
-            this.btnBillboard.TabIndex = 3;
-            this.btnBillboard.Text = "Raw Billboard Data";
-            this.btnBillboard.UseVisualStyleBackColor = false;
-            this.btnBillboard.Click += new System.EventHandler(this.btnBillboard_Click);
+            this.btnMongo.BackColor = System.Drawing.Color.White;
+            this.btnMongo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnMongo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMongo.ForeColor = System.Drawing.Color.Black;
+            this.btnMongo.Location = new System.Drawing.Point(791, 42);
+            this.btnMongo.Name = "btnMongo";
+            this.btnMongo.Size = new System.Drawing.Size(151, 33);
+            this.btnMongo.TabIndex = 5;
+            this.btnMongo.Text = "Dump To MongoDB";
+            this.btnMongo.UseVisualStyleBackColor = false;
+            this.btnMongo.Click += new System.EventHandler(this.btnMongo_Click);
             // 
             // btnMetacritic
             // 
@@ -103,40 +87,39 @@
             this.btnMetacritic.UseVisualStyleBackColor = false;
             this.btnMetacritic.Click += new System.EventHandler(this.btnMetacritic_Click);
             // 
-            // btnMongo
+            // btnBillboard
             // 
-            this.btnMongo.BackColor = System.Drawing.Color.White;
-            this.btnMongo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnMongo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMongo.ForeColor = System.Drawing.Color.Black;
-            this.btnMongo.Location = new System.Drawing.Point(596, 42);
-            this.btnMongo.Name = "btnMongo";
-            this.btnMongo.Size = new System.Drawing.Size(151, 33);
-            this.btnMongo.TabIndex = 5;
-            this.btnMongo.Text = "Dump To MongoDB";
-            this.btnMongo.UseVisualStyleBackColor = false;
-            this.btnMongo.Click += new System.EventHandler(this.btnMongo_Click);
+            this.btnBillboard.BackColor = System.Drawing.Color.White;
+            this.btnBillboard.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnBillboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBillboard.ForeColor = System.Drawing.Color.Black;
+            this.btnBillboard.Location = new System.Drawing.Point(240, 42);
+            this.btnBillboard.Name = "btnBillboard";
+            this.btnBillboard.Size = new System.Drawing.Size(151, 33);
+            this.btnBillboard.TabIndex = 3;
+            this.btnBillboard.Text = "Raw Billboard Data";
+            this.btnBillboard.UseVisualStyleBackColor = false;
+            this.btnBillboard.Click += new System.EventHandler(this.btnBillboard_Click);
             // 
-            // btnOracle
+            // fancyButton1
             // 
-            this.btnOracle.BackColor = System.Drawing.Color.White;
-            this.btnOracle.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnOracle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOracle.ForeColor = System.Drawing.Color.Black;
-            this.btnOracle.Location = new System.Drawing.Point(778, 42);
-            this.btnOracle.Name = "btnOracle";
-            this.btnOracle.Size = new System.Drawing.Size(151, 33);
-            this.btnOracle.TabIndex = 6;
-            this.btnOracle.Text = "Mongo To Oracle";
-            this.btnOracle.UseVisualStyleBackColor = false;
-            this.btnOracle.Click += new System.EventHandler(this.btnOracle_Click);
+            this.fancyButton1.BackColor = System.Drawing.Color.White;
+            this.fancyButton1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.fancyButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fancyButton1.ForeColor = System.Drawing.Color.Black;
+            this.fancyButton1.Location = new System.Drawing.Point(15, 42);
+            this.fancyButton1.Name = "fancyButton1";
+            this.fancyButton1.Size = new System.Drawing.Size(151, 33);
+            this.fancyButton1.TabIndex = 2;
+            this.fancyButton1.Text = "Crawl Site";
+            this.fancyButton1.UseVisualStyleBackColor = false;
+            this.fancyButton1.Click += new System.EventHandler(this.fancyButton1_Click);
             // 
             // Crawler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.btnOracle);
             this.Controls.Add(this.btnMongo);
             this.Controls.Add(this.btnMetacritic);
             this.Controls.Add(this.btnBillboard);
@@ -158,6 +141,5 @@
         private FancyButton btnBillboard;
         private FancyButton btnMetacritic;
         private FancyButton btnMongo;
-        private FancyButton btnOracle;
     }
 }

@@ -101,3 +101,4 @@ F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\obj\Debug\Test
 F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.TitanicDash.resources
 F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Properties.Resources.resources
 F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.csproj.GenerateResource.Cache
+C:\Users\Mofokeng\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\bin\Debug\Oracle.ManagedDataAccess.dll
