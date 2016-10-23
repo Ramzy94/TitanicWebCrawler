@@ -102,3 +102,46 @@ F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\obj\Debug\Test
 F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Properties.Resources.resources
 F:\This is Our Project\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.csproj.GenerateResource.Cache
 C:\Users\Mofokeng\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\bin\Debug\Oracle.ManagedDataAccess.dll
+G:\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TesterApplication.exe.config
+G:\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.exe
+G:\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.pdb
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TesterApplication.exe.config
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.exe
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.pdb
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TesterApplication.exe
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TesterApplication.pdb
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Bson.dll
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Driver.dll
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TitanicCrawler.dll
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TitanicCrawler.pdb
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Bson.xml
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Driver.xml
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.csprojResolveAssemblyReference.cache
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Forms.Crawler.resources
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Forms.Databases.resources
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Forms.ViewData.resources
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.TitanicDash.resources
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Properties.Resources.resources
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.csproj.GenerateResource.Cache
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TesterApplication.exe.config
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.exe
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.pdb
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TesterApplication.exe
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TesterApplication.pdb
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Bson.dll
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Driver.dll
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TitanicCrawler.dll
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\bin\Debug\TitanicCrawler.pdb
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Bson.xml
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\bin\Debug\MongoDB.Driver.xml
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.csprojResolveAssemblyReference.cache
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Forms.Crawler.resources
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Forms.Databases.resources
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Forms.ViewData.resources
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.TitanicDash.resources
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.Properties.Resources.resources
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TesterApplication\obj\Debug\TesterApplication.csproj.GenerateResource.Cache

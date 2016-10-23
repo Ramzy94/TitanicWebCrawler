@@ -50,7 +50,6 @@ namespace TesterApplication.DatabaseConnections
                 BillboardAlbum album200 = (BillboardAlbum)album;
                 collection = mongoDatabase.GetCollection<BsonDocument>("Billboard200");
                 document = album200.BsonDocument;
-
             }
             else
                 throw new ArgumentException("Invalid argument passed to method");
@@ -58,19 +57,29 @@ namespace TesterApplication.DatabaseConnections
             collection.InsertOne(document);
         }
 
-        public Stack<Album> getAllAlbums(int selection)
+        public List<MetacriticAlbum> getMetacritic()
         {
-            Stack<Album> album = new Stack<Album>();
 
-
-            switch(selection)
-            {
-                case 1: collection = mongoDatabase.GetCollection<BsonDocument>("Metacritic");break;
-                case 0: collection = mongoDatabase.GetCollection<BsonDocument>("Billboard200");break;
-            }
-            
-            return album;
+            collection = mongoDatabase.GetCollection<BsonDocument>("Metacritic");
+            List<BsonDocument> documents = collection.Find<BsonDocument>(_ => true).ToList<BsonDocument>();
+            List<MetacriticAlbum> albums = new List<MetacriticAlbum>();
+            foreach (BsonDocument doc in documents)
+                albums.Add(new MetacriticAlbum(doc));
+            return albums;
         }
+
+
+        public List<BillboardAlbum> getBillboard()
+        {
+            collection = mongoDatabase.GetCollection<BsonDocument>("Billboard200");
+            List<BsonDocument> documents = collection.Find<BsonDocument>(_ => true).ToList<BsonDocument>();
+            List<BillboardAlbum> albums = new List<BillboardAlbum>();
+            foreach (BsonDocument doc in documents)
+                albums.Add(new BillboardAlbum(doc));
+            return albums;
+        }
+
+
 
         public void close()
         {

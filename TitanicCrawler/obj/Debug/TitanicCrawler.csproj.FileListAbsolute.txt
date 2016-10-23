@@ -37,3 +37,17 @@ F:\This is Our Project\TitanicSoftwareSolutions\TitanicCrawler\bin\Debug\MongoDB
 F:\This is Our Project\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.csprojResolveAssemblyReference.cache
 F:\This is Our Project\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.dll
 F:\This is Our Project\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.pdb
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TitanicCrawler\bin\Debug\TitanicCrawler.dll
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TitanicCrawler\bin\Debug\TitanicCrawler.pdb
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TitanicCrawler\bin\Debug\MongoDB.Bson.dll
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TitanicCrawler\bin\Debug\MongoDB.Bson.xml
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.csprojResolveAssemblyReference.cache
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.dll
+C:\Users\Nomtha\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.pdb
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TitanicCrawler\bin\Debug\TitanicCrawler.dll
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TitanicCrawler\bin\Debug\TitanicCrawler.pdb
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TitanicCrawler\bin\Debug\MongoDB.Bson.dll
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TitanicCrawler\bin\Debug\MongoDB.Bson.xml
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.csprojResolveAssemblyReference.cache
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.dll
+C:\Users\Zacharia Manyoni\OneDrive\Documents\Visual Studio 2015\Projects\TitanicSoftwareSolutions\TitanicCrawler\obj\Debug\TitanicCrawler.pdb

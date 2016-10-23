@@ -23,6 +23,16 @@ namespace TitanicCrawler.Albums
         }
 
         /// <summary>
+        /// Creates a new Album object from a BSON Document
+        /// </summary>
+        /// <param name="albumDoc"></param>
+        public MetacriticAlbum(BsonDocument albumDoc):base(albumDoc)
+        {
+            MetaScore = Convert.ToInt32(albumDoc["Metascore"].ToString());
+            UserScore = Convert.ToDouble(albumDoc["Userscore"].ToString());
+        }
+
+        /// <summary>
         /// The Rating of The Album according to Metacritic
         /// </summary>
         [DisplayName("Metascore")]

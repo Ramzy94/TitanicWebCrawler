@@ -19,7 +19,6 @@ namespace TesterApplication.Forms
             Series dataSeries = new Series();
 
             dataSeries.ChartType = SeriesChartType.Point;
-            Color color = new Color();
 
             Random rndm = new Random();
             for(int i =0;i<=20; i++)
