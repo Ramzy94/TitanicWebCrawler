@@ -97,5 +97,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart dataChart;
         private System.Windows.Forms.ComboBox dataSelector;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Collections.Generic.List<TitanicCrawler.Albums.BillboardAlbum> bill;
     }
 }

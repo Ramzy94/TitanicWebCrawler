@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TesterApplication.DatabaseConnections;
 using MongoDB.Bson;
 using System.Windows.Forms;
@@ -31,6 +25,8 @@ namespace TesterApplication.Forms
             foreach (BillboardAlbum album in meta)
                 oracleConn.insertAlbum(album);
 
+            richTextBox1.AppendText("All Billboard Albums Added Successfully\n");
+
 
         }
 
@@ -43,6 +39,7 @@ namespace TesterApplication.Forms
 
             foreach (MetacriticAlbum album in meta)
                 oracleConn.insertAlbum(album);
+            richTextBox1.AppendText("All Metacritic Albums Added Successfully\n");
         }
     }
 }

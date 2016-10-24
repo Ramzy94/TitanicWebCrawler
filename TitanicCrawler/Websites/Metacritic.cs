@@ -9,7 +9,7 @@ namespace TitanicCrawler.Websites
     {
         private List<MetacriticAlbum> albums = new List<MetacriticAlbum>();
         private int page = 1;
-        public Metacritic() : base("http://www.metacritic.com/browse/albums/score/metascore/all/all?sort=desc")
+        public Metacritic() : base("http://www.metacritic.com/browse/albums/score/metascore/all/filtered?sort=desc&page=100")
         {
 
         }
@@ -52,7 +52,7 @@ namespace TitanicCrawler.Websites
 
                         AlbumData = rawData[i].GetElementsByTagName("span");
                         if (!(AlbumData[1].InnerHtml == "tbd"))
-                            userRating = Convert.ToDouble(AlbumData[1].InnerHtml);
+                            userRating = 0;
                         else
                             userRating = 0;
 
@@ -90,9 +90,9 @@ namespace TitanicCrawler.Websites
                 requestHandler.nullify();
                 browser.Dispose();
                 browser = null;
-                if (documents.Count < 145)
+                if (documents.Count < 50)
                 {
-                    WebAddress = "http://www.metacritic.com/browse/albums/score/metascore/all/all?sort=desc&page=" + documents.Count;
+                    WebAddress = "http://www.metacritic.com/browse/albums/score/metascore/all/filtered?sort=desc&page=" + (100+documents.Count).ToString();
                     navigateTo();
                     //page++;
                 }

@@ -36,11 +36,9 @@ namespace TesterApplication {
         
         private RATING_HISTORYDataTable tableRATING_HISTORY;
         
-        private global::System.Data.DataRelation relationCHART_ID;
-        
         private global::System.Data.DataRelation relationRATING_ID;
         
-        private global::System.Data.DataRelation relationSYS_C007016;
+        private global::System.Data.DataRelation relationSYS_C007412;
         
         private global::System.Data.DataRelation relationCHART_ID_HISTORY_FK1;
         
@@ -324,9 +322,8 @@ namespace TesterApplication {
                     this.tableRATING_HISTORY.InitVars();
                 }
             }
-            this.relationCHART_ID = this.Relations["CHART_ID"];
             this.relationRATING_ID = this.Relations["RATING_ID"];
-            this.relationSYS_C007016 = this.Relations["SYS_C007016"];
+            this.relationSYS_C007412 = this.Relations["SYS_C007412"];
             this.relationCHART_ID_HISTORY_FK1 = this.Relations["CHART_ID_HISTORY_FK1"];
             this.relationRATING_ID_HIS_FK = this.Relations["RATING_ID_HIS_FK"];
         }
@@ -351,18 +348,14 @@ namespace TesterApplication {
             base.Tables.Add(this.tableRATING);
             this.tableRATING_HISTORY = new RATING_HISTORYDataTable();
             base.Tables.Add(this.tableRATING_HISTORY);
-            this.relationCHART_ID = new global::System.Data.DataRelation("CHART_ID", new global::System.Data.DataColumn[] {
-                        this.tableCHART.CHART_IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableALBUM.CHART_IDColumn}, false);
-            this.Relations.Add(this.relationCHART_ID);
             this.relationRATING_ID = new global::System.Data.DataRelation("RATING_ID", new global::System.Data.DataColumn[] {
                         this.tableRATING.RATING_IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableALBUM.RATING_IDColumn}, false);
             this.Relations.Add(this.relationRATING_ID);
-            this.relationSYS_C007016 = new global::System.Data.DataRelation("SYS_C007016", new global::System.Data.DataColumn[] {
+            this.relationSYS_C007412 = new global::System.Data.DataRelation("SYS_C007412", new global::System.Data.DataColumn[] {
                         this.tableARTIST.ARTIST_IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableALBUM.ARTIST_IDColumn}, false);
-            this.Relations.Add(this.relationSYS_C007016);
+            this.Relations.Add(this.relationSYS_C007412);
             this.relationCHART_ID_HISTORY_FK1 = new global::System.Data.DataRelation("CHART_ID_HISTORY_FK1", new global::System.Data.DataColumn[] {
                         this.tableCHART.CHART_IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableCHART_HISTORY.CHART_IDColumn}, false);
@@ -639,7 +632,7 @@ namespace TesterApplication {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ALBUMRow AddALBUMRow(int ALBUM_ID, string ALBUM_NAME, System.DateTime ALBUM_DATE_RELEASE, string ALBUM_GENRE, ARTISTRow parentARTISTRowBySYS_C007016, RATINGRow parentRATINGRowByRATING_ID, CHARTRow parentCHARTRowByCHART_ID, string ALBUM_ART) {
+            public ALBUMRow AddALBUMRow(int ALBUM_ID, string ALBUM_NAME, System.DateTime ALBUM_DATE_RELEASE, string ALBUM_GENRE, ARTISTRow parentARTISTRowBySYS_C007412, RATINGRow parentRATINGRowByRATING_ID, decimal CHART_ID, string ALBUM_ART) {
                 ALBUMRow rowALBUMRow = ((ALBUMRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ALBUM_ID,
@@ -648,16 +641,13 @@ namespace TesterApplication {
                         ALBUM_GENRE,
                         null,
                         null,
-                        null,
+                        CHART_ID,
                         ALBUM_ART};
-                if ((parentARTISTRowBySYS_C007016 != null)) {
-                    columnValuesArray[4] = parentARTISTRowBySYS_C007016[0];
+                if ((parentARTISTRowBySYS_C007412 != null)) {
+                    columnValuesArray[4] = parentARTISTRowBySYS_C007412[0];
                 }
                 if ((parentRATINGRowByRATING_ID != null)) {
                     columnValuesArray[5] = parentRATINGRowByRATING_ID[0];
-                }
-                if ((parentCHARTRowByCHART_ID != null)) {
-                    columnValuesArray[6] = parentCHARTRowByCHART_ID[6];
                 }
                 rowALBUMRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowALBUMRow);
@@ -722,7 +712,7 @@ namespace TesterApplication {
                 this.columnALBUM_ID.AllowDBNull = false;
                 this.columnALBUM_ID.Unique = true;
                 this.columnALBUM_NAME.AllowDBNull = false;
-                this.columnALBUM_NAME.MaxLength = 20;
+                this.columnALBUM_NAME.MaxLength = 100;
                 this.columnALBUM_GENRE.MaxLength = 20;
                 this.columnARTIST_ID.AllowDBNull = false;
                 this.columnALBUM_ART.MaxLength = 20;
@@ -1013,7 +1003,7 @@ namespace TesterApplication {
                 this.columnARTIST_ID.AllowDBNull = false;
                 this.columnARTIST_ID.Unique = true;
                 this.columnNAME.AllowDBNull = false;
-                this.columnNAME.MaxLength = 20;
+                this.columnNAME.MaxLength = 100;
                 this.columnDESCRIPTION.MaxLength = 225;
             }
             
@@ -1288,7 +1278,7 @@ namespace TesterApplication {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CHARTRow AddCHARTRow(string CHART_TYPE, System.DateTime CHART_DATE, string POSITION, string PEAK_POSITION, string PREVIOUS_POSITION, string WEEKS_ON_CHART, decimal CHART_ID) {
+            public CHARTRow AddCHARTRow(string CHART_TYPE, System.DateTime CHART_DATE, decimal POSITION, decimal PEAK_POSITION, decimal PREVIOUS_POSITION, decimal WEEKS_ON_CHART, decimal CHART_ID) {
                 CHARTRow rowCHARTRow = ((CHARTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CHART_TYPE,
@@ -1343,13 +1333,13 @@ namespace TesterApplication {
                 base.Columns.Add(this.columnCHART_TYPE);
                 this.columnCHART_DATE = new global::System.Data.DataColumn("CHART_DATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCHART_DATE);
-                this.columnPOSITION = new global::System.Data.DataColumn("POSITION", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnPOSITION = new global::System.Data.DataColumn("POSITION", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPOSITION);
-                this.columnPEAK_POSITION = new global::System.Data.DataColumn("PEAK_POSITION", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnPEAK_POSITION = new global::System.Data.DataColumn("PEAK_POSITION", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPEAK_POSITION);
-                this.columnPREVIOUS_POSITION = new global::System.Data.DataColumn("PREVIOUS_POSITION", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnPREVIOUS_POSITION = new global::System.Data.DataColumn("PREVIOUS_POSITION", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPREVIOUS_POSITION);
-                this.columnWEEKS_ON_CHART = new global::System.Data.DataColumn("WEEKS_ON_CHART", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnWEEKS_ON_CHART = new global::System.Data.DataColumn("WEEKS_ON_CHART", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnWEEKS_ON_CHART);
                 this.columnCHART_ID = new global::System.Data.DataColumn("CHART_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCHART_ID);
@@ -1357,10 +1347,6 @@ namespace TesterApplication {
                                 this.columnCHART_ID}, true));
                 this.columnCHART_TYPE.MaxLength = 20;
                 this.columnCHART_DATE.AllowDBNull = false;
-                this.columnPOSITION.MaxLength = 20;
-                this.columnPEAK_POSITION.MaxLength = 20;
-                this.columnPREVIOUS_POSITION.MaxLength = 20;
-                this.columnWEEKS_ON_CHART.MaxLength = 20;
                 this.columnCHART_ID.AllowDBNull = false;
                 this.columnCHART_ID.Unique = true;
             }
@@ -2574,17 +2560,6 @@ namespace TesterApplication {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CHARTRow CHARTRow {
-                get {
-                    return ((CHARTRow)(this.GetParentRow(this.Table.ParentRelations["CHART_ID"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["CHART_ID"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public RATINGRow RATINGRow {
                 get {
                     return ((RATINGRow)(this.GetParentRow(this.Table.ParentRelations["RATING_ID"])));
@@ -2598,10 +2573,10 @@ namespace TesterApplication {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ARTISTRow ARTISTRow {
                 get {
-                    return ((ARTISTRow)(this.GetParentRow(this.Table.ParentRelations["SYS_C007016"])));
+                    return ((ARTISTRow)(this.GetParentRow(this.Table.ParentRelations["SYS_C007412"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["SYS_C007016"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["SYS_C007412"]);
                 }
             }
             
@@ -2733,11 +2708,11 @@ namespace TesterApplication {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ALBUMRow[] GetALBUMRows() {
-                if ((this.Table.ChildRelations["SYS_C007016"] == null)) {
+                if ((this.Table.ChildRelations["SYS_C007412"] == null)) {
                     return new ALBUMRow[0];
                 }
                 else {
-                    return ((ALBUMRow[])(base.GetChildRows(this.Table.ChildRelations["SYS_C007016"])));
+                    return ((ALBUMRow[])(base.GetChildRows(this.Table.ChildRelations["SYS_C007412"])));
                 }
             }
         }
@@ -2785,10 +2760,10 @@ namespace TesterApplication {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string POSITION {
+            public decimal POSITION {
                 get {
                     try {
-                        return ((string)(this[this.tableCHART.POSITIONColumn]));
+                        return ((decimal)(this[this.tableCHART.POSITIONColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'POSITION\' in table \'CHART\' is DBNull.", e);
@@ -2801,10 +2776,10 @@ namespace TesterApplication {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PEAK_POSITION {
+            public decimal PEAK_POSITION {
                 get {
                     try {
-                        return ((string)(this[this.tableCHART.PEAK_POSITIONColumn]));
+                        return ((decimal)(this[this.tableCHART.PEAK_POSITIONColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'PEAK_POSITION\' in table \'CHART\' is DBNull.", e);
@@ -2817,10 +2792,10 @@ namespace TesterApplication {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PREVIOUS_POSITION {
+            public decimal PREVIOUS_POSITION {
                 get {
                     try {
-                        return ((string)(this[this.tableCHART.PREVIOUS_POSITIONColumn]));
+                        return ((decimal)(this[this.tableCHART.PREVIOUS_POSITIONColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'PREVIOUS_POSITION\' in table \'CHART\' is DBNull.", e);
@@ -2833,10 +2808,10 @@ namespace TesterApplication {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string WEEKS_ON_CHART {
+            public decimal WEEKS_ON_CHART {
                 get {
                     try {
-                        return ((string)(this[this.tableCHART.WEEKS_ON_CHARTColumn]));
+                        return ((decimal)(this[this.tableCHART.WEEKS_ON_CHARTColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'WEEKS_ON_CHART\' in table \'CHART\' is DBNull.", e);
@@ -2916,17 +2891,6 @@ namespace TesterApplication {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetWEEKS_ON_CHARTNull() {
                 this[this.tableCHART.WEEKS_ON_CHARTColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ALBUMRow[] GetALBUMRows() {
-                if ((this.Table.ChildRelations["CHART_ID"] == null)) {
-                    return new ALBUMRow[0];
-                }
-                else {
-                    return ((ALBUMRow[])(base.GetChildRows(this.Table.ChildRelations["CHART_ID"])));
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3736,7 +3700,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_ALBUM_NAME";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.Size = 100;
             param.IsNullable = true;
             param.SourceColumn = "ALBUM_NAME";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -3861,7 +3825,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "ALBUM_NAME";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.Size = 100;
             param.IsNullable = true;
             param.SourceColumn = "ALBUM_NAME";
             this._adapter.InsertCommand.Parameters.Add(param);
@@ -3926,7 +3890,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "ALBUM_NAME";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.Size = 100;
             param.IsNullable = true;
             param.SourceColumn = "ALBUM_NAME";
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -3988,7 +3952,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_ALBUM_NAME";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.Size = 100;
             param.IsNullable = true;
             param.SourceColumn = "ALBUM_NAME";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -4101,7 +4065,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::Oracle.ManagedDataAccess.Client.OracleConnection();
-            this._connection.ConnectionString = global::TesterApplication.Properties.Settings.Default.ConnectionString;
+            this._connection.ConnectionString = global::TesterApplication.Properties.Settings.Default.ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4571,7 +4535,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_NAME";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.Size = 100;
             param.IsNullable = true;
             param.SourceColumn = "NAME";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -4610,7 +4574,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "NAME";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.Size = 100;
             param.IsNullable = true;
             param.SourceColumn = "NAME";
             this._adapter.InsertCommand.Parameters.Add(param);
@@ -4636,7 +4600,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "NAME";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.Size = 100;
             param.IsNullable = true;
             param.SourceColumn = "NAME";
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -4659,7 +4623,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_NAME";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.Size = 100;
             param.IsNullable = true;
             param.SourceColumn = "NAME";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -4688,7 +4652,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::Oracle.ManagedDataAccess.Client.OracleConnection();
-            this._connection.ConnectionString = global::TesterApplication.Properties.Settings.Default.ConnectionString;
+            this._connection.ConnectionString = global::TesterApplication.Properties.Settings.Default.ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5046,7 +5010,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             param.ParameterName = "IsNull_POSITION";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 20;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "POSITION";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -5054,8 +5018,9 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_POSITION";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "POSITION";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -5064,7 +5029,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             param.ParameterName = "IsNull_PEAK_POSITION";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 20;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "PEAK_POSITION";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -5072,8 +5037,9 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_PEAK_POSITION";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "PEAK_POSITION";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -5082,7 +5048,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             param.ParameterName = "IsNull_PREVIOUS_POSITION";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 20;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "PREVIOUS_POSITION";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -5090,8 +5056,9 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_PREVIOUS_POSITION";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "PREVIOUS_POSITION";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -5100,7 +5067,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             param.ParameterName = "IsNull_WEEKS_ON_CHART";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 20;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "WEEKS_ON_CHART";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -5108,8 +5075,9 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_WEEKS_ON_CHART";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "WEEKS_ON_CHART";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -5147,29 +5115,33 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "POSITION";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "POSITION";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "PEAK_POSITION";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "PEAK_POSITION";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "PREVIOUS_POSITION";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "PREVIOUS_POSITION";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "WEEKS_ON_CHART";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "WEEKS_ON_CHART";
             this._adapter.InsertCommand.Parameters.Add(param);
@@ -5202,29 +5174,33 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "POSITION";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "POSITION";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "PEAK_POSITION";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "PEAK_POSITION";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "PREVIOUS_POSITION";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "PREVIOUS_POSITION";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "WEEKS_ON_CHART";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "WEEKS_ON_CHART";
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -5267,7 +5243,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             param.ParameterName = "IsNull_POSITION";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 20;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "POSITION";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -5275,8 +5251,9 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_POSITION";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "POSITION";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -5285,7 +5262,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             param.ParameterName = "IsNull_PEAK_POSITION";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 20;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "PEAK_POSITION";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -5293,8 +5270,9 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_PEAK_POSITION";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "PEAK_POSITION";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -5303,7 +5281,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             param.ParameterName = "IsNull_PREVIOUS_POSITION";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 20;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "PREVIOUS_POSITION";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -5311,8 +5289,9 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_PREVIOUS_POSITION";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "PREVIOUS_POSITION";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -5321,7 +5300,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             param.ParameterName = "IsNull_WEEKS_ON_CHART";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 20;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "WEEKS_ON_CHART";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -5329,8 +5308,9 @@ namespace TesterApplication.audioAlbumsTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_WEEKS_ON_CHART";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "WEEKS_ON_CHART";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -5350,7 +5330,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::Oracle.ManagedDataAccess.Client.OracleConnection();
-            this._connection.ConnectionString = global::TesterApplication.Properties.Settings.Default.ConnectionString;
+            this._connection.ConnectionString = global::TesterApplication.Properties.Settings.Default.ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5421,7 +5401,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_CHART_TYPE, System.DateTime Original_CHART_DATE, string Original_POSITION, string Original_PEAK_POSITION, string Original_PREVIOUS_POSITION, string Original_WEEKS_ON_CHART, decimal Original_CHART_ID) {
+        public virtual int Delete(string Original_CHART_TYPE, System.DateTime Original_CHART_DATE, global::System.Nullable<decimal> Original_POSITION, global::System.Nullable<decimal> Original_PEAK_POSITION, global::System.Nullable<decimal> Original_PREVIOUS_POSITION, global::System.Nullable<decimal> Original_WEEKS_ON_CHART, decimal Original_CHART_ID) {
             if ((Original_CHART_TYPE == null)) {
                 this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -5431,37 +5411,37 @@ namespace TesterApplication.audioAlbumsTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_CHART_TYPE));
             }
             this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_CHART_DATE));
-            if ((Original_POSITION == null)) {
+            if ((Original_POSITION.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_POSITION.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_POSITION));
+            if ((Original_PEAK_POSITION.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((decimal)(Original_PEAK_POSITION.Value));
             }
-            if ((Original_PEAK_POSITION == null)) {
+            else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_PEAK_POSITION));
+            if ((Original_PREVIOUS_POSITION.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((decimal)(Original_PREVIOUS_POSITION.Value));
             }
-            if ((Original_PREVIOUS_POSITION == null)) {
+            else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_PREVIOUS_POSITION));
+            if ((Original_WEEKS_ON_CHART.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((decimal)(Original_WEEKS_ON_CHART.Value));
             }
-            if ((Original_WEEKS_ON_CHART == null)) {
+            else {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_WEEKS_ON_CHART));
             }
             this.Adapter.DeleteCommand.Parameters[11].Value = ((decimal)(Original_CHART_ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
@@ -5484,7 +5464,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string CHART_TYPE, System.DateTime CHART_DATE, string POSITION, string PEAK_POSITION, string PREVIOUS_POSITION, string WEEKS_ON_CHART, decimal CHART_ID) {
+        public virtual int Insert(string CHART_TYPE, System.DateTime CHART_DATE, global::System.Nullable<decimal> POSITION, global::System.Nullable<decimal> PEAK_POSITION, global::System.Nullable<decimal> PREVIOUS_POSITION, global::System.Nullable<decimal> WEEKS_ON_CHART, decimal CHART_ID) {
             if ((CHART_TYPE == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -5492,29 +5472,29 @@ namespace TesterApplication.audioAlbumsTableAdapters {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(CHART_TYPE));
             }
             this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(CHART_DATE));
-            if ((POSITION == null)) {
+            if ((POSITION.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(POSITION.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(POSITION));
+            if ((PEAK_POSITION.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((decimal)(PEAK_POSITION.Value));
             }
-            if ((PEAK_POSITION == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(PEAK_POSITION));
+            if ((PREVIOUS_POSITION.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((decimal)(PREVIOUS_POSITION.Value));
             }
-            if ((PREVIOUS_POSITION == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(PREVIOUS_POSITION));
+            if ((WEEKS_ON_CHART.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(WEEKS_ON_CHART.Value));
             }
-            if ((WEEKS_ON_CHART == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(WEEKS_ON_CHART));
             }
             this.Adapter.InsertCommand.Parameters[6].Value = ((decimal)(CHART_ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
@@ -5537,7 +5517,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string CHART_TYPE, System.DateTime CHART_DATE, string POSITION, string PEAK_POSITION, string PREVIOUS_POSITION, string WEEKS_ON_CHART, decimal CHART_ID, string Original_CHART_TYPE, System.DateTime Original_CHART_DATE, string Original_POSITION, string Original_PEAK_POSITION, string Original_PREVIOUS_POSITION, string Original_WEEKS_ON_CHART, decimal Original_CHART_ID) {
+        public virtual int Update(string CHART_TYPE, System.DateTime CHART_DATE, global::System.Nullable<decimal> POSITION, global::System.Nullable<decimal> PEAK_POSITION, global::System.Nullable<decimal> PREVIOUS_POSITION, global::System.Nullable<decimal> WEEKS_ON_CHART, decimal CHART_ID, string Original_CHART_TYPE, System.DateTime Original_CHART_DATE, global::System.Nullable<decimal> Original_POSITION, global::System.Nullable<decimal> Original_PEAK_POSITION, global::System.Nullable<decimal> Original_PREVIOUS_POSITION, global::System.Nullable<decimal> Original_WEEKS_ON_CHART, decimal Original_CHART_ID) {
             if ((CHART_TYPE == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -5545,29 +5525,29 @@ namespace TesterApplication.audioAlbumsTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(CHART_TYPE));
             }
             this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(CHART_DATE));
-            if ((POSITION == null)) {
+            if ((POSITION.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(POSITION.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(POSITION));
+            if ((PEAK_POSITION.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(PEAK_POSITION.Value));
             }
-            if ((PEAK_POSITION == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(PEAK_POSITION));
+            if ((PREVIOUS_POSITION.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(PREVIOUS_POSITION.Value));
             }
-            if ((PREVIOUS_POSITION == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(PREVIOUS_POSITION));
+            if ((WEEKS_ON_CHART.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(WEEKS_ON_CHART.Value));
             }
-            if ((WEEKS_ON_CHART == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(WEEKS_ON_CHART));
             }
             this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(CHART_ID));
             if ((Original_CHART_TYPE == null)) {
@@ -5579,37 +5559,37 @@ namespace TesterApplication.audioAlbumsTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_CHART_TYPE));
             }
             this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_CHART_DATE));
-            if ((Original_POSITION == null)) {
+            if ((Original_POSITION.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(Original_POSITION.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_POSITION));
+            if ((Original_PEAK_POSITION.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(Original_PEAK_POSITION.Value));
             }
-            if ((Original_PEAK_POSITION == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_PEAK_POSITION));
+            if ((Original_PREVIOUS_POSITION.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((decimal)(Original_PREVIOUS_POSITION.Value));
             }
-            if ((Original_PREVIOUS_POSITION == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_PREVIOUS_POSITION));
+            if ((Original_WEEKS_ON_CHART.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((decimal)(Original_WEEKS_ON_CHART.Value));
             }
-            if ((Original_WEEKS_ON_CHART == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_WEEKS_ON_CHART));
             }
             this.Adapter.UpdateCommand.Parameters[18].Value = ((decimal)(Original_CHART_ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
@@ -5632,7 +5612,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string CHART_TYPE, System.DateTime CHART_DATE, string POSITION, string PEAK_POSITION, string PREVIOUS_POSITION, string WEEKS_ON_CHART, string Original_CHART_TYPE, System.DateTime Original_CHART_DATE, string Original_POSITION, string Original_PEAK_POSITION, string Original_PREVIOUS_POSITION, string Original_WEEKS_ON_CHART, decimal Original_CHART_ID) {
+        public virtual int Update(string CHART_TYPE, System.DateTime CHART_DATE, global::System.Nullable<decimal> POSITION, global::System.Nullable<decimal> PEAK_POSITION, global::System.Nullable<decimal> PREVIOUS_POSITION, global::System.Nullable<decimal> WEEKS_ON_CHART, string Original_CHART_TYPE, System.DateTime Original_CHART_DATE, global::System.Nullable<decimal> Original_POSITION, global::System.Nullable<decimal> Original_PEAK_POSITION, global::System.Nullable<decimal> Original_PREVIOUS_POSITION, global::System.Nullable<decimal> Original_WEEKS_ON_CHART, decimal Original_CHART_ID) {
             return this.Update(CHART_TYPE, CHART_DATE, POSITION, PEAK_POSITION, PREVIOUS_POSITION, WEEKS_ON_CHART, Original_CHART_ID, Original_CHART_TYPE, Original_CHART_DATE, Original_POSITION, Original_PEAK_POSITION, Original_PREVIOUS_POSITION, Original_WEEKS_ON_CHART, Original_CHART_ID);
         }
     }
@@ -6101,7 +6081,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::Oracle.ManagedDataAccess.Client.OracleConnection();
-            this._connection.ConnectionString = global::TesterApplication.Properties.Settings.Default.ConnectionString;
+            this._connection.ConnectionString = global::TesterApplication.Properties.Settings.Default.ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6750,7 +6730,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::Oracle.ManagedDataAccess.Client.OracleConnection();
-            this._connection.ConnectionString = global::TesterApplication.Properties.Settings.Default.ConnectionString;
+            this._connection.ConnectionString = global::TesterApplication.Properties.Settings.Default.ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7315,7 +7295,7 @@ namespace TesterApplication.audioAlbumsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::Oracle.ManagedDataAccess.Client.OracleConnection();
-            this._connection.ConnectionString = global::TesterApplication.Properties.Settings.Default.ConnectionString;
+            this._connection.ConnectionString = global::TesterApplication.Properties.Settings.Default.ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
